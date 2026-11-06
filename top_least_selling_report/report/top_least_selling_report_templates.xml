@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="action_report_top_least_selling" model="ir.actions.report">
+        <field name="name">Top &amp; Least Selling Products</field>
+        <field name="model">top.least.selling.wizard</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">top_least_selling_report.report_top_least_selling</field>
+        <field name="report_file">top_least_selling_report.report_top_least_selling</field>
+        <field name="print_report_name">'Top-Least-Selling-%s-%s' % (object.date_from, object.date_to)</field>
+        <field name="paperformat_id" ref="paperformat_top_least_selling"/>
+    </record>
+
+    <!-- One ranking table (top or least set). Expects: o, lines, totals, tls_compare, tls_num, tls_txt -->
+    <template id="report_top_least_selling_table">
+        <table class="tls-table">
+            <thead>
+                <tr>
+                    <th class="tls-col-rank">#</th>
+                    <th t-att-style="tls_txt" class="tls-col-product">Product</th>
+                    <th t-att-style="tls_txt">UoM</th>
+                    <th t-att-style="tls_num">Sold Quantity</th>
+                    <th t-att-style="tls_num">Sold Quantity Cost</th>
+                    <th t-att-style="tls_num">Total Sale Price</th>
+                    <th t-att-style="tls_num">Total Profit</th>
+                    <th t-att-style="tls_num">Margin %</th>
+                    <t t-if="tls_compare">
+                        <th t-att-style="tls_num">Prev. Quantity</th>
+                        <th t-att-style="tls_num">Prev. Sales</th>
+                        <th t-att-style="tls_num">Prev. Profit</th>
+                        <th t-att-style="tls_num">Qty Change %</th>
+                        <th t-att-style="tls_num">Sales Change %</th>
+                        <th t-att-style="tls_num">Profit Change %</th>
+                        <th class="tls-col-rank">Prev. Rank</th>
+                    </t>
+                </tr>
+            </thead>
+            <tbody>
+                <tr t-if="not lines">
+                    <td class="tls-empty" t-att-colspan="15 if tls_compare else 8">No sales found for the selected criteria.</td>
+                </tr>
+                <tr t-foreach="lines" t-as="line">
+                    <td class="tls-col-rank"><div class="tls-rank-badge" t-esc="line.rank"/></td>
+                    <td t-att-style="tls_txt" class="tls-product" t-esc="o._bidi_text(line.product_id.display_name)"/>
+                    <td t-att-style="tls_txt" t-esc="line.uom_id.name"/>
+                    <td t-att-style="tls_num" t-esc="line.qty_sold" t-options="{'widget': 'float', 'decimal_precision': 'Product Unit of Measure'}"/>
+                    <td t-att-style="tls_num" t-esc="line.cost_amount" t-options="{'widget': 'monetary', 'display_currency': line.currency_id}"/>
+                    <td t-att-style="tls_num" t-esc="line.sales_amount" t-options="{'widget': 'monetary', 'display_currency': line.currency_id}"/>
+                    <td t-att-style="tls_num" t-esc="line.profit_amount" t-options="{'widget': 'monetary', 'display_currency': line.currency_id}"
+                        t-attf-class="#{'tls-neg' if line.profit_amount &lt; 0 else ''}"/>
+                    <td t-att-style="tls_num" dir="ltr" t-esc="o._format_percent(line.margin_percent)"/>
+                    <t t-if="tls_compare">
+                        <td t-att-style="tls_num" t-esc="line.prev_qty_sold" t-options="{'widget': 'float', 'decimal_precision': 'Product Unit of Measure'}"/>
+                        <td t-att-style="tls_num" t-esc="line.prev_sales_amount" t-options="{'widget': 'monetary', 'display_currency': line.currency_id}"/>
+                        <td t-att-style="tls_num" t-esc="line.prev_profit_amount" t-options="{'widget': 'monetary', 'display_currency': line.currency_id}"/>
+                        <td t-att-style="tls_num" dir="ltr" t-esc="o._format_percent(line.qty_change_percent, signed=True)"
+                            t-attf-class="#{'tls-pos' if line.qty_change_percent &gt; 0 else ('tls-neg' if line.qty_change_percent &lt; 0 else '')}"/>
+                        <td t-att-style="tls_num" dir="ltr" t-esc="o._format_percent(line.sales_change_percent, signed=True)"
+                            t-attf-class="#{'tls-pos' if line.sales_change_percent &gt; 0 else ('tls-neg' if line.sales_change_percent &lt; 0 else '')}"/>
+                        <td t-att-style="tls_num" dir="ltr" t-esc="o._format_percent(line.profit_change_percent, signed=True)"
+                            t-attf-class="#{'tls-pos' if line.profit_change_percent &gt; 0 else ('tls-neg' if line.profit_change_percent &lt; 0 else '')}"/>
+                        <td class="tls-col-rank">
+                            <t t-if="line.is_new"><div class="tls-new-badge">New</div></t>
+                            <t t-elif="line.prev_rank"><t t-esc="line.prev_rank"/></t>
+                            <t t-else="">-</t>
+                        </td>
+                    </t>
+                </tr>
+            </tbody>
+            <tfoot t-if="lines">
+                <tr>
+                    <td colspan="4" t-att-style="tls_txt">Total</td>
+                    <td t-att-style="tls_num" t-esc="totals['cost']" t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
+                    <td t-att-style="tls_num" t-esc="totals['sales']" t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
+                    <td t-att-style="tls_num" t-esc="totals['profit']" t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
+                    <td t-att-style="tls_num" dir="ltr" t-esc="o._format_percent(totals['margin'])"/>
+                    <td t-if="tls_compare" colspan="7"/>
+                </tr>
+            </tfoot>
+        </table>
+    </template>
+
+    <template id="report_top_least_selling_document">
+        <t t-call="web.external_layout">
+            <t t-set="tls_dir" t-value="o._get_report_direction()"/>
+            <t t-set="tls_rtl" t-value="tls_dir == 'rtl'"/>
+            <t t-set="tls_num" t-value="'text-align: left;' if tls_rtl else 'text-align: right;'"/>
+            <t t-set="tls_txt" t-value="'text-align: right;' if tls_rtl else 'text-align: left;'"/>
+            <t t-set="tls_compare" t-value="o.compare_mode != 'none'"/>
+            <div t-att-dir="tls_dir" t-attf-class="page tls-report #{'tls-rtl' if tls_rtl else 'tls-ltr'}">
+
+                <div class="tls-head">
+                    <h2 class="tls-title" t-att-style="tls_txt">Top &amp; Least Selling Products</h2>
+                    <div class="tls-subtitle" t-att-style="tls_txt">Ranking of confirmed sales by product</div>
+                </div>
+
+                <table class="tls-criteria">
+                    <tr>
+                        <th t-att-style="tls_txt">Period</th>
+                        <td t-att-style="tls_txt" t-esc="o._format_period(o.date_from, o.date_to)"/>
+                        <th t-att-style="tls_txt">Ranked By</th>
+                        <td t-att-style="tls_txt" t-esc="o._get_selection_label('rank_by')"/>
+                    </tr>
+                    <tr>
+                        <th t-att-style="tls_txt">Comparison Period</th>
+                        <td t-att-style="tls_txt">
+                            <t t-if="tls_compare"><t t-esc="o._format_period(o.compare_date_from, o.compare_date_to)"/></t>
+                            <t t-else="">None</t>
+                        </td>
+                        <th t-att-style="tls_txt">Products per Ranking</th>
+                        <td t-att-style="tls_txt" t-esc="o.limit"/>
+                    </tr>
+                    <tr>
+                        <th t-att-style="tls_txt">Grouped By</th>
+                        <td t-att-style="tls_txt" t-esc="o._get_selection_label('group_by')"/>
+                        <th t-att-style="tls_txt">Companies</th>
+                        <td t-att-style="tls_txt" t-esc="o._get_company_names()"/>
+                    </tr>
+                </table>
+
+                <table class="tls-kpis">
+                    <tr>
+                        <td class="tls-kpi">
+                            <div class="tls-kpi-label">Products Sold</div>
+                            <div class="tls-kpi-value" t-esc="o.summary_product_count"/>
+                        </td>
+                        <td class="tls-kpi">
+                            <div class="tls-kpi-label">Total Sale Price</div>
+                            <div class="tls-kpi-value" t-esc="o.summary_sales" t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
+                            <t t-if="tls_compare">
+                                <div class="tls-kpi-sub">vs. comparison period</div>
+                                <div dir="ltr" t-attf-class="tls-kpi-delta #{'tls-pos' if o.summary_sales_change &gt; 0 else ('tls-neg' if o.summary_sales_change &lt; 0 else '')}"
+                                     t-esc="o._format_percent(o.summary_sales_change, signed=True)"/>
+                            </t>
+                        </td>
+                        <td class="tls-kpi">
+                            <div class="tls-kpi-label">Sold Quantity Cost</div>
+                            <div class="tls-kpi-value" t-esc="o.summary_cost" t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
+                        </td>
+                        <td class="tls-kpi">
+                            <div class="tls-kpi-label">Total Profit</div>
+                            <div class="tls-kpi-value" t-esc="o.summary_profit" t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
+                            <t t-if="tls_compare">
+                                <div class="tls-kpi-sub">vs. comparison period</div>
+                                <div dir="ltr" t-attf-class="tls-kpi-delta #{'tls-pos' if o.summary_profit_change &gt; 0 else ('tls-neg' if o.summary_profit_change &lt; 0 else '')}"
+                                     t-esc="o._format_percent(o.summary_profit_change, signed=True)"/>
+                            </t>
+                        </td>
+                        <td class="tls-kpi">
+                            <div class="tls-kpi-label">Overall Margin</div>
+                            <div class="tls-kpi-value" dir="ltr" t-esc="o._format_percent(o.summary_margin_percent)"/>
+                        </td>
+                    </tr>
+                </table>
+
+                <t t-set="tls_groups" t-value="o._get_report_groups()"/>
+                <div t-if="not tls_groups" class="tls-empty-block">No sales found for the selected criteria.</div>
+                <t t-foreach="tls_groups" t-as="grp">
+                    <div class="tls-group">
+                        <div t-if="grp['label']" class="tls-group-title" t-att-style="tls_txt" t-esc="o._bidi_text(grp['label'])"/>
+
+                        <div class="tls-section-title tls-section-top" t-att-style="tls_txt">Top Selling Products</div>
+                        <t t-call="top_least_selling_report.report_top_least_selling_table">
+                            <t t-set="lines" t-value="grp['top']"/>
+                            <t t-set="totals" t-value="grp['top_totals']"/>
+                        </t>
+
+                        <div class="tls-section-title tls-section-least" t-att-style="tls_txt">Least Selling Products</div>
+                        <t t-call="top_least_selling_report.report_top_least_selling_table">
+                            <t t-set="lines" t-value="grp['least']"/>
+                            <t t-set="totals" t-value="grp['least_totals']"/>
+                        </t>
+                    </div>
+                </t>
+
+                <div class="tls-note" t-att-style="tls_txt">Untaxed amounts in company currency. Cost is the product cost recorded on each sales order line.</div>
+            </div>
+        </t>
+    </template>
+
+    <template id="report_top_least_selling">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="top_least_selling_report.report_top_least_selling_document"/>
+            </t>
+        </t>
+    </template>
+
+</odoo>

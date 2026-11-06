@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_top_least_selling_line_tree" model="ir.ui.view">
+        <field name="name">top.least.selling.report.line.tree</field>
+        <field name="model">top.least.selling.report.line</field>
+        <field name="arch" type="xml">
+            <tree string="Top &amp; Least Selling Products" create="false" edit="false" delete="false"
+                  decoration-success="section == 'top'" decoration-warning="section == 'least'">
+                <field name="currency_id" invisible="1"/>
+                <field name="group_sequence" invisible="1"/>
+                <field name="section"/>
+                <field name="rank"/>
+                <field name="group_label" optional="show"/>
+                <field name="product_id"/>
+                <field name="product_categ_id" optional="hide"/>
+                <field name="uom_id"/>
+                <field name="qty_sold"/>
+                <field name="cost_amount" sum="Total"/>
+                <field name="sales_amount" sum="Total"/>
+                <field name="profit_amount" sum="Total"/>
+                <field name="margin_percent"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_top_least_selling_line_tree_compare" model="ir.ui.view">
+        <field name="name">top.least.selling.report.line.tree.compare</field>
+        <field name="model">top.least.selling.report.line</field>
+        <field name="inherit_id" ref="view_top_least_selling_line_tree"/>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <field name="margin_percent" position="after">
+                <field name="prev_qty_sold" optional="show"/>
+                <field name="prev_cost_amount" optional="hide"/>
+                <field name="prev_sales_amount" optional="show" sum="Total"/>
+                <field name="prev_profit_amount" optional="show" sum="Total"/>
+                <field name="qty_change_percent" optional="show"
+                       decoration-success="qty_change_percent &gt; 0" decoration-danger="qty_change_percent &lt; 0"/>
+                <field name="sales_change_percent" optional="show"
+                       decoration-success="sales_change_percent &gt; 0" decoration-danger="sales_change_percent &lt; 0"/>
+                <field name="profit_change_percent" optional="show"
+                       decoration-success="profit_change_percent &gt; 0" decoration-danger="profit_change_percent &lt; 0"/>
+                <field name="prev_rank" optional="show"/>
+                <field name="is_new" optional="show" widget="boolean_toggle" readonly="1"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_top_least_selling_line_pivot" model="ir.ui.view">
+        <field name="name">top.least.selling.report.line.pivot</field>
+        <field name="model">top.least.selling.report.line</field>
+        <field name="arch" type="xml">
+            <pivot string="Top &amp; Least Selling Products" disable_linking="1">
+                <field name="section" type="row"/>
+                <field name="product_id" type="row"/>
+                <field name="qty_sold" type="measure"/>
+                <field name="cost_amount" type="measure"/>
+                <field name="sales_amount" type="measure"/>
+                <field name="profit_amount" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="view_top_least_selling_line_graph" model="ir.ui.view">
+        <field name="name">top.least.selling.report.line.graph</field>
+        <field name="model">top.least.selling.report.line</field>
+        <field name="arch" type="xml">
+            <graph string="Top &amp; Least Selling Products" type="bar" disable_linking="1">
+                <field name="product_id"/>
+                <field name="sales_amount" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="view_top_least_selling_line_search" model="ir.ui.view">
+        <field name="name">top.least.selling.report.line.search</field>
+        <field name="model">top.least.selling.report.line</field>
+        <field name="arch" type="xml">
+            <search string="Top &amp; Least Selling Products">
+                <field name="product_id"/>
+                <field name="product_categ_id"/>
+                <field name="team_id"/>
+                <field name="user_id"/>
+                <filter name="filter_top" string="Top Selling" domain="[('section', '=', 'top')]"/>
+                <filter name="filter_least" string="Least Selling" domain="[('section', '=', 'least')]"/>
+                <separator/>
+                <filter name="filter_new" string="New in Period" domain="[('is_new', '=', True)]"/>
+                <group expand="1" string="Group By">
+                    <filter name="group_section" string="Ranking" context="{'group_by': 'section'}"/>
+                    <filter name="group_team" string="Sales Team" context="{'group_by': 'team_id'}"/>
+                    <filter name="group_user" string="Salesperson" context="{'group_by': 'user_id'}"/>
+                    <filter name="group_category" string="Product Category" context="{'group_by': 'product_categ_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+</odoo>

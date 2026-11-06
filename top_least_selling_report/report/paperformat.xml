@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!--
+        Anti-overlap rule: margin_top must be larger than header_spacing, and
+        header_spacing must be larger than the rendered external layout header
+        (logo + company address). 44 / 38 mm leaves room for a tall logo, so the
+        repeated header never sits on top of the first table row of a page.
+    -->
+    <record id="paperformat_top_least_selling" model="report.paperformat">
+        <field name="name">Top &amp; Least Selling (A4 Landscape)</field>
+        <field name="default" eval="False"/>
+        <field name="format">A4</field>
+        <field name="orientation">Landscape</field>
+        <field name="margin_top">44</field>
+        <field name="margin_bottom">24</field>
+        <field name="margin_left">8</field>
+        <field name="margin_right">8</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">38</field>
+        <field name="dpi">90</field>
+    </record>
+
+</odoo>

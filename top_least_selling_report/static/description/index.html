@@ -1,0 +1,200 @@
+<!-- Odoo Apps description page for top_least_selling_report (Odoo 16.0). Inline styles only: apps.odoo.com strips <style> and <script> blocks. -->
+<section style="max-width:1120px;margin:0 auto;padding:0 16px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;color:#2b2b33;">
+
+<!-- ============================== HERO ============================== -->
+<div style="background:linear-gradient(120deg,#017E84 0%,#3d6b78 45%,#714B67 100%);border-radius:18px;padding:48px 40px 40px;color:#ffffff;margin-top:12px;">
+  <div style="font-size:13px;letter-spacing:2px;text-transform:uppercase;opacity:.85;margin-bottom:10px;">Sales &middot; Reporting &middot; Analytics</div>
+  <h1 style="font-size:40px;line-height:1.15;font-weight:700;margin:0 0 14px;color:#ffffff;">Top &amp; Least Selling Products</h1>
+  <p style="font-size:19px;line-height:1.55;max-width:760px;margin:0 0 24px;color:#ffffff;opacity:.95;">See which products carry your sales and which ones barely move, ranked by quantity, revenue or profit. Compare any two periods, group by sales team or salesperson, and share the result as a list, a PDF or an Excel file.</p>
+  <div>
+    <span style="display:inline-block;border:1px solid rgba(255,255,255,.7);border-radius:20px;padding:6px 14px;margin:0 8px 8px 0;font-size:14px;">Odoo 16.0</span>
+    <span style="display:inline-block;border:1px solid rgba(255,255,255,.7);border-radius:20px;padding:6px 14px;margin:0 8px 8px 0;font-size:14px;">Community &amp; Enterprise</span>
+    <span style="display:inline-block;border:1px solid rgba(255,255,255,.7);border-radius:20px;padding:6px 14px;margin:0 8px 8px 0;font-size:14px;">English &amp; Arabic (RTL)</span>
+    <span style="display:inline-block;border:1px solid rgba(255,255,255,.7);border-radius:20px;padding:6px 14px;margin:0 8px 8px 0;font-size:14px;">31 automated tests</span>
+    <span style="display:inline-block;border:1px solid rgba(255,255,255,.7);border-radius:20px;padding:6px 14px;margin:0 8px 8px 0;font-size:14px;">Technical name: top_least_selling_report</span>
+    <span style="display:inline-block;border:1px solid rgba(255,255,255,.7);border-radius:20px;padding:6px 14px;margin:0 8px 8px 0;font-size:14px;">LGPL-3</span>
+  </div>
+</div>
+
+<!-- ============================== KEY NUMBERS ============================== -->
+<div style="display:flex;flex-wrap:wrap;margin:28px -8px 8px;">
+  <div style="flex:1 1 220px;margin:8px;background:#f6f4f6;border-radius:14px;padding:20px 22px;"><div style="font-size:30px;font-weight:700;color:#714B67;">3 rankings</div><div style="font-size:15px;color:#555;">Sold quantity, total sale price or total profit</div></div>
+  <div style="flex:1 1 220px;margin:8px;background:#eef6f6;border-radius:14px;padding:20px 22px;"><div style="font-size:30px;font-weight:700;color:#017E84;">3 comparisons</div><div style="font-size:15px;color:#555;">Previous period, same period last year or custom dates</div></div>
+  <div style="flex:1 1 220px;margin:8px;background:#f6f4f6;border-radius:14px;padding:20px 22px;"><div style="font-size:30px;font-weight:700;color:#714B67;">3 outputs</div><div style="font-size:15px;color:#555;">List / pivot / graph, styled PDF and Excel (.xlsx)</div></div>
+  <div style="flex:1 1 220px;margin:8px;background:#eef6f6;border-radius:14px;padding:20px 22px;"><div style="font-size:30px;font-weight:700;color:#017E84;">1 to 1,000</div><div style="font-size:15px;color:#555;">Products per top and least set, per group</div></div>
+</div>
+
+<!-- ============================== WHY ============================== -->
+<h2 style="font-size:28px;font-weight:700;margin:40px 0 6px;color:#2b2b33;">Why this module</h2>
+<p style="font-size:16px;color:#555;margin:0 0 18px;">The standard Sales Analysis is a flexible pivot, but turning it into a clear &ldquo;best and worst sellers&rdquo; report takes manual work every time.</p>
+<div style="display:flex;flex-wrap:wrap;margin:0 -10px;">
+  <div style="flex:1 1 440px;margin:10px;border:1px solid #f1d6d6;background:#fff8f8;border-radius:14px;padding:24px 26px;">
+    <h3 style="font-size:19px;font-weight:700;color:#b33939;margin:0 0 12px;">In standard Odoo 16</h3>
+    <ul style="font-size:15px;line-height:1.65;margin:0;padding-left:20px;color:#3a3a42;">
+      <li>You sort a pivot by hand; there is <b>no Top N / Least N list</b> with rank numbers.</li>
+      <li>Products that <b>did not sell at all</b> never appear in Sales Analysis.</li>
+      <li>Margin is available, but <b>sold quantity cost</b> is not shown as its own column.</li>
+      <li>Period comparison adds columns, but <b>no previous rank</b> and no flag for products new in the period.</li>
+      <li>Ranking <b>inside each sales team or salesperson</b> means filtering and re-sorting one by one.</li>
+      <li>Exports are raw pivot files, <b>not a presentable PDF</b>, and nothing is laid out right-to-left for Arabic readers.</li>
+    </ul>
+  </div>
+  <div style="flex:1 1 440px;margin:10px;border:1px solid #cfe7e7;background:#f4fbfb;border-radius:14px;padding:24px 26px;">
+    <h3 style="font-size:19px;font-weight:700;color:#017E84;margin:0 0 12px;">With this module</h3>
+    <ul style="font-size:15px;line-height:1.65;margin:0;padding-left:20px;color:#3a3a42;">
+      <li>One wizard builds a <b>Top Selling</b> and a <b>Least Selling</b> set, ranked 1&ndash;N.</li>
+      <li><b>Include Products Without Sales</b> puts never-sold saleable products first in the least set.</li>
+      <li>Every line shows <b>Sold Quantity Cost</b>, <b>Total Sale Price</b>, <b>Total Profit</b> and <b>Margin %</b>.</li>
+      <li>Comparison adds previous figures, <b>change %</b>, <b>Previous Rank</b> and a <b>New in Period</b> flag.</li>
+      <li><b>Group By</b> Sales Team or Salesperson restarts the ranking in each group.</li>
+      <li>A designed <b>A4 landscape PDF</b> and a formatted <b>Excel</b> file, both right-to-left in Arabic.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ============================== HOW IT WORKS ============================== -->
+<h2 style="font-size:28px;font-weight:700;margin:40px 0 6px;color:#2b2b33;">How it works</h2>
+<p style="font-size:16px;color:#555;margin:0 0 18px;">Four steps, all from one dialog.</p>
+<div style="display:flex;flex-wrap:wrap;margin:0 -8px;">
+  <div style="flex:1 1 200px;margin:8px;border-radius:12px;border:1px solid #e3dde2;padding:18px;"><div style="width:34px;height:34px;border-radius:50%;background:#714B67;color:#fff;font-weight:700;text-align:center;line-height:34px;margin-bottom:10px;">1</div><div style="font-weight:700;margin-bottom:4px;">Open</div><div style="font-size:14px;color:#555;">Sales &rsaquo; Reporting &rsaquo; Top &amp; Least Selling Products.</div></div>
+  <div style="flex:1 1 200px;margin:8px;border-radius:12px;border:1px solid #e3dde2;padding:18px;"><div style="width:34px;height:34px;border-radius:50%;background:#714B67;color:#fff;font-weight:700;text-align:center;line-height:34px;margin-bottom:10px;">2</div><div style="font-weight:700;margin-bottom:4px;">Choose the period</div><div style="font-size:14px;color:#555;">Start and end date, plus an optional comparison period.</div></div>
+  <div style="flex:1 1 200px;margin:8px;border-radius:12px;border:1px solid #e3dde2;padding:18px;"><div style="width:34px;height:34px;border-radius:50%;background:#714B67;color:#fff;font-weight:700;text-align:center;line-height:34px;margin-bottom:10px;">3</div><div style="font-weight:700;margin-bottom:4px;">Rank and group</div><div style="font-size:14px;color:#555;">Rank by quantity, revenue or profit; set how many products; group by team or salesperson; filter if needed.</div></div>
+  <div style="flex:1 1 200px;margin:8px;border-radius:12px;border:1px solid #cfe7e7;background:#f4fbfb;padding:18px;"><div style="width:34px;height:34px;border-radius:50%;background:#017E84;color:#fff;font-weight:700;text-align:center;line-height:34px;margin-bottom:10px;">4</div><div style="font-weight:700;margin-bottom:4px;">Pick an output</div><div style="font-size:14px;color:#555;"><b>Show on Browser</b>, <b>Print PDF</b> or <b>Export Excel</b>.</div></div>
+</div>
+
+<!-- ============================== FEATURES ============================== -->
+<h2 style="font-size:28px;font-weight:700;margin:40px 0 6px;color:#2b2b33;">Features</h2>
+<p style="font-size:16px;color:#555;margin:0 0 18px;">Screenshots use demo data: 14 office furniture products sold by the <b>Sales</b> and <b>Website</b> teams in October 2026, compared with the previous period (31 Aug &ndash; 30 Sep 2026), ranked by Total Sale Price with 5 products per set.</p>
+
+<div style="margin:44px 0 0;">
+  <div style="font-size:13px;font-weight:700;color:#017E84;letter-spacing:1px;text-transform:uppercase;">Menus</div>
+  <h3 style="font-size:23px;font-weight:700;margin:4px 0 8px;">One new entry, nothing replaced</h3>
+  <p style="font-size:15px;line-height:1.6;color:#555;margin:0 0 14px;">The report lives at <b>Sales &rsaquo; Reporting &rsaquo; Top &amp; Least Selling Products</b>. The standard <b>Sales</b> analysis and every other Odoo report stay exactly as they are.</p>
+  <img src="tls_01_menu.png" alt="Sales Reporting menu with the Top and Least Selling Products entry" style="width:100%;max-width:1000px;border:1px solid #e1e1e6;border-radius:10px;box-shadow:0 6px 24px rgba(30,30,60,.10);"/>
+</div>
+
+<div style="margin:44px 0 0;">
+  <div style="font-size:13px;font-weight:700;color:#017E84;letter-spacing:1px;text-transform:uppercase;">Feature 1</div>
+  <h3 style="font-size:23px;font-weight:700;margin:4px 0 8px;">Every option in one wizard</h3>
+  <p style="font-size:15px;line-height:1.6;color:#555;margin:0 0 14px;">Set <b>Start Date</b> and <b>End Date</b>, then <b>Compare With</b> <b>No Comparison</b>, <b>Previous Period</b>, <b>Same Period Last Year</b> or <b>Custom Period</b>. The comparison dates fill in automatically and can be typed freely in custom mode. Choose <b>Rank By</b>, the <b>Number of Products</b> and <b>Group By</b> (<b>No Grouping</b>, <b>Sales Team</b>, <b>Salesperson</b>). Optional filters: <b>Companies</b>, <b>Sales Teams</b>, <b>Salespersons</b> and <b>Product Categories</b> (sub-categories included).</p>
+  <img src="tls_02_wizard.png" alt="Report wizard with period, comparison, ranking, grouping and filters" style="width:100%;max-width:1000px;border:1px solid #e1e1e6;border-radius:10px;box-shadow:0 6px 24px rgba(30,30,60,.10);"/>
+</div>
+
+<div style="margin:44px 0 0;">
+  <div style="font-size:13px;font-weight:700;color:#017E84;letter-spacing:1px;text-transform:uppercase;">Feature 2</div>
+  <h3 style="font-size:23px;font-weight:700;margin:4px 0 8px;">Show on Browser: rankings you can work with</h3>
+  <p style="font-size:15px;line-height:1.6;color:#555;margin:0 0 14px;">The list opens grouped by <b>Ranking</b>: top sellers in green, least sellers in amber, with totals per set. When comparing, it adds <b>Previous Quantity</b>, <b>Previous Sales</b>, <b>Previous Profit</b>, the three <b>Change (%)</b> columns (green up, red down), <b>Previous Rank</b> and <b>New in Period</b>. Comparison columns are optional, so each user can hide what they don&rsquo;t need. Search filters: <b>Top Selling</b>, <b>Least Selling</b>, <b>New in Period</b>; group by Ranking, Sales Team, Salesperson or Product Category.</p>
+  <img src="tls_03_list.png" alt="List view with top and least selling groups and comparison columns" style="width:100%;border:1px solid #e1e1e6;border-radius:10px;box-shadow:0 6px 24px rgba(30,30,60,.10);"/>
+  <div style="background:#f4fbfb;border-left:4px solid #017E84;border-radius:8px;padding:16px 20px;font-size:15px;line-height:1.6;margin-top:14px;"><b>Read it like this:</b> Large Meeting Table is the #2 seller by revenue ($&nbsp;22,800.00) but loses $&nbsp;600.00, a margin of &minus;2.63&nbsp;%. Drawer is flagged <b>New in Period</b>: it sold nothing in September.</div>
+</div>
+
+<div style="margin:44px 0 0;">
+  <div style="font-size:13px;font-weight:700;color:#017E84;letter-spacing:1px;text-transform:uppercase;">Feature 3</div>
+  <h3 style="font-size:23px;font-weight:700;margin:4px 0 8px;">Pivot and graph on the same result</h3>
+  <p style="font-size:15px;line-height:1.6;color:#555;margin:0 0 14px;">Switch views to slice the ranked lines by section, product, product category, team or salesperson. The pivot starts with <b>Sold Quantity</b>, <b>Sold Quantity Cost</b>, <b>Total Sale Price</b> and <b>Total Profit</b>; the graph shows Total Sale Price per product.</p>
+  <img src="tls_04_pivot.png" alt="Pivot view of top and least selling products" style="width:100%;max-width:1000px;border:1px solid #e1e1e6;border-radius:10px;box-shadow:0 6px 24px rgba(30,30,60,.10);margin-bottom:22px;"/>
+  <img src="tls_05_graph.png" alt="Bar graph of total sale price per product" style="width:100%;max-width:1000px;border:1px solid #e1e1e6;border-radius:10px;box-shadow:0 6px 24px rgba(30,30,60,.10);"/>
+</div>
+
+<div style="margin:44px 0 0;">
+  <div style="font-size:13px;font-weight:700;color:#017E84;letter-spacing:1px;text-transform:uppercase;">Feature 4</div>
+  <h3 style="font-size:23px;font-weight:700;margin:4px 0 8px;">A PDF you can hand to management</h3>
+  <p style="font-size:15px;line-height:1.6;color:#555;margin:0 0 14px;"><b>Print PDF</b> produces an A4 landscape report in your company layout: the criteria used, five KPI cards (<b>Products Sold</b>, <b>Total Sale Price</b>, <b>Sold Quantity Cost</b>, <b>Total Profit</b>, <b>Overall Margin</b>, with change versus the comparison period), then the green <b>Top Selling Products</b> and amber <b>Least Selling Products</b> tables with totals. Table headers repeat on each page, rows never split, and the paper format leaves room so the company header never overlaps the content.</p>
+  <img src="tls_06_pdf.png" alt="PDF report with KPI cards and top and least selling tables" style="width:100%;border:1px solid #e1e1e6;border-radius:10px;box-shadow:0 6px 24px rgba(30,30,60,.10);margin-bottom:22px;"/>
+  <img src="tls_07_pdf_team.png" alt="PDF report grouped by sales team" style="width:100%;border:1px solid #e1e1e6;border-radius:10px;box-shadow:0 6px 24px rgba(30,30,60,.10);"/>
+  <div style="font-size:13px;color:#777;margin:6px 0 22px;">Grouped by Sales Team: each team gets its own top and least sets, teams ordered by sales.</div>
+</div>
+
+<div style="margin:44px 0 0;">
+  <div style="font-size:13px;font-weight:700;color:#017E84;letter-spacing:1px;text-transform:uppercase;">Feature 5</div>
+  <h3 style="font-size:23px;font-weight:700;margin:4px 0 8px;">Excel export, ready to share</h3>
+  <p style="font-size:15px;line-height:1.6;color:#555;margin:0 0 14px;"><b>Export Excel</b> downloads an .xlsx with the same structure as the PDF: criteria block, KPI row, colour-coded sections per group and a total row per set. Values are real numbers with number formats, so they can be filtered, charted and summed straight away.</p>
+  <img src="tls_08_excel.png" alt="Excel export grouped by sales team" style="width:100%;border:1px solid #e1e1e6;border-radius:10px;box-shadow:0 6px 24px rgba(30,30,60,.10);"/>
+</div>
+
+<div style="margin:44px 0 0;">
+  <div style="font-size:13px;font-weight:700;color:#017E84;letter-spacing:1px;text-transform:uppercase;">Feature 6</div>
+  <h3 style="font-size:23px;font-weight:700;margin:4px 0 8px;">Full Arabic, right to left</h3>
+  <p style="font-size:15px;line-height:1.6;color:#555;margin:0 0 14px;">Every label, button, message and report heading is translated to Arabic (<b>ar_001</b>). For Arabic users the PDF and the Excel sheet switch to right-to-left, while signed percentages and Latin product references such as <b>[FURN_8220]</b> keep their correct reading order.</p>
+  <img src="tls_09_pdf_arabic.png" alt="Arabic right-to-left PDF report" style="width:100%;border:1px solid #e1e1e6;border-radius:10px;box-shadow:0 6px 24px rgba(30,30,60,.10);margin-bottom:22px;"/>
+  <img src="tls_10_excel_arabic.png" alt="Arabic right-to-left Excel export" style="width:100%;border:1px solid #e1e1e6;border-radius:10px;box-shadow:0 6px 24px rgba(30,30,60,.10);"/>
+</div>
+
+<!-- ============================== HOW THE FIGURES ARE COMPUTED ============================== -->
+<h2 style="font-size:28px;font-weight:700;margin:48px 0 6px;color:#2b2b33;">How the figures are computed</h2>
+<p style="font-size:16px;color:#555;margin:0 0 18px;">Confirmed sales orders only (<b>Sales Order</b> and <b>Locked</b>), read through the standard Sales Analysis and summed in the database.</p>
+<table style="width:100%;border-collapse:collapse;font-size:15px;">
+  <thead><tr style="background:#714B67;color:#fff;"><th style="text-align:left;padding:10px 14px;">Column</th><th style="text-align:left;padding:10px 14px;">Meaning</th></tr></thead>
+  <tbody>
+    <tr style="border-bottom:1px solid #eee;"><td style="padding:10px 14px;"><b>Sold Quantity</b></td><td style="padding:10px 14px;">Ordered quantity converted to the product&rsquo;s own unit of measure (2 Dozens &rarr; 24 Units)</td></tr>
+    <tr style="border-bottom:1px solid #eee;background:#fafafa;"><td style="padding:10px 14px;"><b>Total Sale Price</b></td><td style="padding:10px 14px;">Untaxed subtotal, converted to the company currency</td></tr>
+    <tr style="border-bottom:1px solid #eee;"><td style="padding:10px 14px;"><b>Sold Quantity Cost</b></td><td style="padding:10px 14px;">Cost recorded on each sales order line (Sales Margin) &times; quantity</td></tr>
+    <tr style="border-bottom:1px solid #eee;background:#fafafa;"><td style="padding:10px 14px;"><b>Total Profit</b></td><td style="padding:10px 14px;">Total Sale Price &minus; Sold Quantity Cost</td></tr>
+    <tr style="border-bottom:1px solid #eee;"><td style="padding:10px 14px;"><b>Margin %</b></td><td style="padding:10px 14px;">Total Profit &divide; Total Sale Price &times; 100 (0 when nothing was sold)</td></tr>
+    <tr style="border-bottom:1px solid #eee;background:#fafafa;"><td style="padding:10px 14px;"><b>Change %</b></td><td style="padding:10px 14px;">(current &minus; previous) &divide; |previous| &times; 100</td></tr>
+    <tr style="border-bottom:1px solid #eee;"><td style="padding:10px 14px;"><b>Previous Rank</b></td><td style="padding:10px 14px;">Position of the product among all products of the same group in the comparison period</td></tr>
+  </tbody>
+</table>
+<div style="margin:18px 0 6px;">
+  <div style="margin-bottom:6px;"><span style="display:inline-block;min-width:150px;text-align:center;background:#d1fae5;color:#047857;border-radius:10px;padding:1px 8px;font-size:13px;margin-right:10px;">+27.27%</span> grew compared with the comparison period</div>
+  <div style="margin-bottom:6px;"><span style="display:inline-block;min-width:150px;text-align:center;background:#fee2e2;color:#b91c1c;border-radius:10px;padding:1px 8px;font-size:13px;margin-right:10px;">&minus;25.00%</span> declined compared with the comparison period</div>
+  <div style="margin-bottom:6px;"><span style="display:inline-block;min-width:150px;text-align:center;background:#dbeafe;color:#1d4ed8;border-radius:10px;padding:1px 8px;font-size:13px;margin-right:10px;">New</span> sold now, nothing in the comparison period</div>
+</div>
+<div style="background:#f4fbfb;border-left:4px solid #017E84;border-radius:8px;padding:16px 20px;font-size:15px;line-height:1.6;margin-top:14px;"><b>Worked example:</b> Four Person Desk sold 14 Units for $&nbsp;32,242.00 at a cost of $&nbsp;26,460.00, so Total Profit is $&nbsp;5,782.00 and Margin is 17.93&nbsp;%. In the previous period it sold 11 Units: Quantity Change = (14 &minus; 11) &divide; 11 = +27.27&nbsp;%.</div>
+
+<!-- ============================== CORNER CASES ============================== -->
+<h2 style="font-size:28px;font-weight:700;margin:48px 0 6px;color:#2b2b33;">Built for real-world corner cases</h2>
+<p style="font-size:16px;color:#555;margin:0 0 18px;">Each of these is covered by the automated tests.</p>
+<div style="display:flex;flex-wrap:wrap;margin:0 -8px;font-size:15px;line-height:1.55;">
+  <div style="flex:1 1 320px;margin:8px;padding:16px 18px;border:1px solid #e8e8ee;border-radius:12px;"><b>Different units of measure</b><br/><span style="color:#555;">Lines sold in Dozens are counted in the product&rsquo;s reference unit, so quantities add up correctly.</span></div>
+  <div style="flex:1 1 320px;margin:8px;padding:16px 18px;border:1px solid #e8e8ee;border-radius:12px;"><b>Drafts and cancellations</b><br/><span style="color:#555;">Quotations and cancelled orders are ignored; only confirmed orders count.</span></div>
+  <div style="flex:1 1 320px;margin:8px;padding:16px 18px;border:1px solid #e8e8ee;border-radius:12px;"><b>Products never sold</b><br/><span style="color:#555;">Optional: saleable products with zero sales appear first in the least set, without being counted as sold.</span></div>
+  <div style="flex:1 1 320px;margin:8px;padding:16px 18px;border:1px solid #e8e8ee;border-radius:12px;"><b>Empty comparison period</b><br/><span style="color:#555;">No infinite growth figures: the line is flagged <b>New</b> and its change stays at 0.</span></div>
+  <div style="flex:1 1 320px;margin:8px;padding:16px 18px;border:1px solid #e8e8ee;border-radius:12px;"><b>Loss-making products</b><br/><span style="color:#555;">Negative profit and margin are shown as they are, in red, and still ranked correctly.</span></div>
+  <div style="flex:1 1 320px;margin:8px;padding:16px 18px;border:1px solid #e8e8ee;border-radius:12px;"><b>Orders without a team or salesperson</b><br/><span style="color:#555;">Grouped under <b>No Sales Team</b> or <b>No Salesperson</b> instead of disappearing.</span></div>
+  <div style="flex:1 1 320px;margin:8px;padding:16px 18px;border:1px solid #e8e8ee;border-radius:12px;"><b>Time zones</b><br/><span style="color:#555;">Start and end dates are full days in the user&rsquo;s own time zone.</span></div>
+  <div style="flex:1 1 320px;margin:8px;padding:16px 18px;border:1px solid #e8e8ee;border-radius:12px;"><b>Ties and leap years</b><br/><span style="color:#555;">Equal values are ordered by product name; 29 February maps to 28 February for last year.</span></div>
+  <div style="flex:1 1 320px;margin:8px;padding:16px 18px;border:1px solid #e8e8ee;border-radius:12px;"><b>Large databases</b><br/><span style="color:#555;">Totals are computed by PostgreSQL in one grouped query per period, not line by line in Python.</span></div>
+</div>
+
+<!-- ============================== SECURITY ============================== -->
+<h2 style="font-size:28px;font-weight:700;margin:48px 0 6px;color:#2b2b33;">Security</h2>
+<p style="font-size:16px;color:#555;margin:0 0 18px;">The report reads Odoo&rsquo;s Sales Analysis, so the standard Sales access rules decide what each user sees.</p>
+<table style="width:100%;border-collapse:collapse;font-size:15px;">
+  <thead><tr style="background:#714B67;color:#fff;"><th style="text-align:left;padding:10px 14px;">Who</th><th style="text-align:left;padding:10px 14px;">Sees</th></tr></thead>
+  <tbody>
+    <tr style="border-bottom:1px solid #eee;"><td style="padding:10px 14px;">Sales: Administrator</td><td style="padding:10px 14px;">All confirmed orders of the selected companies</td></tr>
+    <tr style="border-bottom:1px solid #eee;background:#fafafa;"><td style="padding:10px 14px;">Sales: User: All Documents</td><td style="padding:10px 14px;">All confirmed orders of the selected companies</td></tr>
+    <tr style="border-bottom:1px solid #eee;"><td style="padding:10px 14px;">Sales: User: Own Documents Only</td><td style="padding:10px 14px;">Only their own orders and orders with no salesperson (standard Sales Analysis rule)</td></tr>
+    <tr style="border-bottom:1px solid #eee;background:#fafafa;"><td style="padding:10px 14px;">Multi-company</td><td style="padding:10px 14px;">Only companies the user is allowed in; amounts converted to the current company currency</td></tr>
+    <tr style="border-bottom:1px solid #eee;"><td style="padding:10px 14px;">Generated results</td><td style="padding:10px 14px;">Private to the user who ran the report and cleaned up automatically by Odoo</td></tr>
+  </tbody>
+</table>
+
+<!-- ============================== TECHNICAL DETAILS ============================== -->
+<h2 style="font-size:28px;font-weight:700;margin:48px 0 6px;color:#2b2b33;">Technical details</h2>
+<table style="width:100%;border-collapse:collapse;font-size:15px;table-layout:fixed;word-wrap:break-word;overflow-wrap:break-word;">
+  <tbody>
+    <tr style="border-bottom:1px solid #eee;"><td style="padding:10px 14px;width:32%;max-width:240px;color:#777;">Odoo version</td><td style="padding:10px 14px;">16.0, Community and Enterprise</td></tr>
+    <tr style="border-bottom:1px solid #eee;background:#fafafa;"><td style="padding:10px 14px;width:32%;max-width:240px;color:#777;">Depends on</td><td style="padding:10px 14px;"><code>sale_management</code>, <code>sale_margin</code></td></tr>
+    <tr style="border-bottom:1px solid #eee;"><td style="padding:10px 14px;width:32%;max-width:240px;color:#777;">Python dependency</td><td style="padding:10px 14px;"><code>xlsxwriter</code> (already part of Odoo&rsquo;s requirements)</td></tr>
+    <tr style="border-bottom:1px solid #eee;background:#fafafa;"><td style="padding:10px 14px;width:32%;max-width:240px;color:#777;">Menus</td><td style="padding:10px 14px;">Sales &rsaquo; Reporting &rsaquo; Top &amp; Least Selling Products</td></tr>
+    <tr style="border-bottom:1px solid #eee;"><td style="padding:10px 14px;width:32%;max-width:240px;color:#777;">Settings</td><td style="padding:10px 14px;">None needed</td></tr>
+    <tr style="border-bottom:1px solid #eee;background:#fafafa;"><td style="padding:10px 14px;width:32%;max-width:240px;color:#777;">Models</td><td style="padding:10px 14px;"><code>top.least.selling.wizard</code>, <code>top.least.selling.report.line</code> (both transient)</td></tr>
+    <tr style="border-bottom:1px solid #eee;"><td style="padding:10px 14px;width:32%;max-width:240px;color:#777;">Report</td><td style="padding:10px 14px;">QWeb PDF with its own A4 landscape paper format; no change to existing reports</td></tr>
+    <tr style="border-bottom:1px solid #eee;background:#fafafa;"><td style="padding:10px 14px;width:32%;max-width:240px;color:#777;">Translations</td><td style="padding:10px 14px;">Arabic (<code>ar_001</code>), plus a .pot template for other languages</td></tr>
+    <tr style="border-bottom:1px solid #eee;"><td style="padding:10px 14px;width:32%;max-width:240px;color:#777;">Automated tests</td><td style="padding:10px 14px;">31: ranking and margin math, period and leap-year calculations, period comparison, grouping, filters, units of measure, validation, list / PDF / Excel outputs in English and Arabic</td></tr>
+    <tr style="border-bottom:1px solid #eee;background:#fafafa;"><td style="padding:10px 14px;width:32%;max-width:240px;color:#777;">License</td><td style="padding:10px 14px;">LGPL-3</td></tr>
+  </tbody>
+</table>
+
+<!-- ============================== CONTACT ============================== -->
+<div style="margin:52px 0 40px;background:linear-gradient(120deg,#714B67 0%,#017E84 100%);border-radius:18px;padding:36px 40px;color:#fff;">
+  <h2 style="font-size:26px;font-weight:700;margin:0 0 8px;color:#fff;">Support &amp; customization</h2>
+  <p style="font-size:16px;line-height:1.6;margin:0 0 20px;color:#fff;opacity:.95;">Questions, a demo, or an adaptation to your own process? Get in touch.</p>
+  <a href="mailto:ibrahim.yahiah@gmail.com" style="display:inline-block;background:#fff;color:#714B67;font-weight:700;text-decoration:none;border-radius:8px;padding:12px 22px;margin:0 12px 10px 0;">&#9993;&nbsp; ibrahim.yahiah@gmail.com</a>
+  <a href="https://www.linkedin.com/in/ibrahim-yahia" target="_blank" rel="noopener" style="display:inline-block;border:2px solid #fff;color:#fff;font-weight:700;text-decoration:none;border-radius:8px;padding:10px 22px;margin:0 0 10px 0;">LinkedIn: Ibrahim Yahia</a>
+  <p style="font-size:13px;margin:14px 0 0;opacity:.8;color:#fff;">Author: Ibrahim Yahia &middot; License: LGPL-3</p>
+</div>
+
+</section>

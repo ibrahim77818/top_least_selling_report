@@ -1,0 +1,246 @@
+// Top & Least Selling Products - PDF styles.
+//
+// Direction-dependent alignment (left/right) is applied with inline styles in
+// the QWeb template, so these rules stay valid when Odoo serves the RTL
+// (rtlcss-flipped) version of the report bundle for Arabic.
+//
+// Anti-overlap rules:
+//   * the paper format reserves 44 mm on top for the layout header;
+//   * table headers repeat on each page (display: table-header-group);
+//   * totals never repeat (tfoot as a row group);
+//   * rows and titles never split from the content they belong to.
+
+$tls-navy: #0f3d5c;
+$tls-blue: #0f6e9e;
+$tls-green: #1e7b4f;
+$tls-amber: #b45309;
+$tls-ink: #1f2937;
+$tls-muted: #6b7280;
+$tls-line: #e5e7eb;
+
+.tls-report {
+    font-size: 10.5px;
+    color: $tls-ink;
+    padding-top: 2mm;
+
+    .tls-head {
+        margin: 0 0 6px 0;
+        page-break-after: avoid;
+    }
+    .tls-title {
+        font-size: 21px;
+        font-weight: 700;
+        color: $tls-navy;
+        margin: 0;
+        line-height: 1.25;
+    }
+    .tls-subtitle {
+        font-size: 11px;
+        color: $tls-muted;
+        margin-top: 1px;
+    }
+
+    // ---- criteria -------------------------------------------------------
+    .tls-criteria {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 4px 0 10px 0;
+        page-break-inside: avoid;
+        th, td {
+            padding: 4px 7px;
+            border-bottom: 1px solid $tls-line;
+            vertical-align: middle;
+        }
+        th {
+            width: 17%;
+            background: #f3f6f9;
+            color: #4b5563;
+            font-weight: 600;
+        }
+        td {
+            width: 33%;
+        }
+    }
+
+    // ---- KPI cards (table based: wkhtmltopdf has no reliable flexbox) ----
+    .tls-kpis {
+        width: 100%;
+        table-layout: fixed;
+        border-collapse: separate;
+        border-spacing: 6px 0;
+        margin: 0 0 12px 0;
+        page-break-inside: avoid;
+    }
+    .tls-kpi {
+        background: #f0f6fb;
+        border-top: 3px solid $tls-blue;
+        padding: 7px 9px;
+        vertical-align: top;
+        text-align: center;
+    }
+    .tls-kpi-label {
+        font-size: 9.5px;
+        text-transform: uppercase;
+        letter-spacing: 0.3px;
+        color: #4b5563;
+    }
+    .tls-kpi-value {
+        font-size: 15px;
+        font-weight: 700;
+        color: $tls-navy;
+        margin-top: 2px;
+    }
+    .tls-kpi-sub {
+        font-size: 8.5px;
+        color: $tls-muted;
+        margin-top: 3px;
+    }
+    .tls-kpi-delta {
+        font-size: 11px;
+        font-weight: 700;
+    }
+
+    // ---- groups & sections ----------------------------------------------
+    .tls-group {
+        page-break-inside: auto;
+    }
+    .tls-group-title {
+        font-size: 14px;
+        font-weight: 700;
+        color: $tls-navy;
+        border-bottom: 2px solid $tls-navy;
+        padding: 3px 0;
+        margin: 14px 0 6px 0;
+        page-break-after: avoid;
+    }
+    .tls-section-title {
+        font-size: 12px;
+        font-weight: 700;
+        color: #ffffff;
+        padding: 5px 9px;
+        margin: 8px 0 0 0;
+        page-break-after: avoid;
+        page-break-inside: avoid;
+    }
+    .tls-section-top {
+        background: $tls-green;
+    }
+    .tls-section-least {
+        background: $tls-amber;
+    }
+
+    // ---- ranking tables -------------------------------------------------
+    .tls-table {
+        width: 100%;
+        font-size: 9.5px;
+        border-collapse: collapse;
+        margin: 0 0 10px 0;
+        page-break-inside: auto;
+
+        thead {
+            display: table-header-group;
+        }
+        tfoot {
+            display: table-row-group;
+        }
+        tr {
+            page-break-inside: avoid;
+            page-break-after: auto;
+        }
+        th {
+            background: $tls-navy;
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 9.5px;
+            padding: 5px 6px;
+            border: 1px solid $tls-navy;
+            vertical-align: middle;
+            line-height: 1.2;
+        }
+        td {
+            padding: 4px 6px;
+            border: 1px solid $tls-line;
+            vertical-align: middle;
+            white-space: nowrap;
+        }
+        td.tls-product {
+            white-space: normal;
+            word-wrap: break-word;
+        }
+        tbody tr:nth-child(even) td {
+            background: #f9fafb;
+        }
+        tfoot td {
+            font-weight: 700;
+            background: #eef2f6;
+            border-top: 2px solid $tls-navy;
+        }
+        .tls-col-rank {
+            width: 34px;
+            text-align: center;
+        }
+        .tls-col-product {
+            width: 21%;
+        }
+    }
+    .tls-rank-badge {
+        display: inline-block;
+        min-width: 18px;
+        padding: 1px 4px;
+        border-radius: 9px;
+        background: #e8eef4;
+        color: $tls-navy;
+        font-weight: 700;
+        text-align: center;
+    }
+    .tls-new-badge {
+        display: inline-block;
+        padding: 1px 5px;
+        border-radius: 3px;
+        background: #dbeafe;
+        color: #1d4ed8;
+        font-size: 8.5px;
+        font-weight: 700;
+    }
+    .tls-pos {
+        color: #15803d;
+    }
+    .tls-neg {
+        color: #b91c1c;
+    }
+    .tls-empty {
+        text-align: center;
+        font-style: italic;
+        color: $tls-muted;
+        padding: 10px;
+    }
+    .tls-empty-block {
+        text-align: center;
+        font-style: italic;
+        color: $tls-muted;
+        padding: 20px;
+        border: 1px dashed $tls-line;
+    }
+    .tls-note {
+        margin-top: 8px;
+        font-size: 8.5px;
+        color: $tls-muted;
+    }
+}
+
+// Arabic: DejaVu Sans ships Arabic glyphs and is present wherever wkhtmltopdf is.
+.tls-report.tls-rtl {
+    font-family: 'DejaVu Sans', 'Noto Naskh Arabic', 'Arial', sans-serif;
+    direction: rtl;
+
+    .tls-kpi-label {
+        font-size: 10.5px;
+        text-transform: none;
+        letter-spacing: 0;
+    }
+    .tls-subtitle,
+    .tls-kpi-sub,
+    .tls-note {
+        font-size: 10px;
+    }
+}

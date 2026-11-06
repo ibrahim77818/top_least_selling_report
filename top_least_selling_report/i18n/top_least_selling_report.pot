@@ -1,0 +1,638 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* top_least_selling_report
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-05 11:30+0000\n"
+"PO-Revision-Date: 2026-11-05 11:30+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: top_least_selling_report
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.view_top_least_selling_wizard_form
+msgid "Cancel"
+msgstr ""
+
+#. module: top_least_selling_report
+#. odoo-python
+#: code:addons/top_least_selling_report/wizard/top_least_selling_wizard.py:0
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_wizard__company_ids
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.report_top_least_selling_document
+msgid "Companies"
+msgstr ""
+
+#. module: top_least_selling_report
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_wizard__compare_mode
+msgid "Compare With"
+msgstr ""
+
+#. module: top_least_selling_report
+#: model:ir.model.fields,help:top_least_selling_report.field_top_least_selling_wizard__compare_mode
+msgid "Compare every product with its figures in another period: the period of the same length just before, the same dates one year earlier, or dates you choose."
+msgstr ""
+
+#. module: top_least_selling_report
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.view_top_least_selling_wizard_form
+msgid "Comparison"
+msgstr ""
+
+#. module: top_least_selling_report
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_wizard__compare_date_to
+msgid "Comparison End Date"
+msgstr ""
+
+#. module: top_least_selling_report
+#. odoo-python
+#: code:addons/top_least_selling_report/wizard/top_least_selling_wizard.py:0
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.report_top_least_selling_document
+msgid "Comparison Period"
+msgstr ""
+
+#. module: top_least_selling_report
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_wizard__compare_date_from
+msgid "Comparison Start Date"
+msgstr ""
+
+#. module: top_least_selling_report
+#. odoo-python
+#: code:addons/top_least_selling_report/wizard/top_least_selling_wizard.py:0
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_wizard__currency_id
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_report_line__currency_id
+msgid "Currency"
+msgstr ""
+
+#. module: top_least_selling_report
+#: model:ir.model.fields.selection,name:top_least_selling_report.selection__top_least_selling_wizard__compare_mode__custom
+msgid "Custom Period"
+msgstr ""
+
+#. module: top_least_selling_report
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_wizard__date_to
+msgid "End Date"
+msgstr ""
+
+#. module: top_least_selling_report
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_wizard__excel_file
+msgid "Excel File"
+msgstr ""
+
+#. module: top_least_selling_report
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_wizard__excel_filename
+msgid "Excel File Name"
+msgstr ""
+
+#. module: top_least_selling_report
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.view_top_least_selling_wizard_form
+msgid "Export Excel"
+msgstr ""
+
+#. module: top_least_selling_report
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.view_top_least_selling_wizard_form
+msgid "Filters"
+msgstr ""
+
+#. module: top_least_selling_report
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_report_line__group_label
+msgid "Group"
+msgstr ""
+
+#. module: top_least_selling_report
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_wizard__group_by
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.view_top_least_selling_line_search
+msgid "Group By"
+msgstr ""
+
+#. module: top_least_selling_report
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_report_line__group_sequence
+msgid "Group Sequence"
+msgstr ""
+
+#. module: top_least_selling_report
+#. odoo-python
+#: code:addons/top_least_selling_report/wizard/top_least_selling_wizard.py:0
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.report_top_least_selling_document
+msgid "Grouped By"
+msgstr ""
+
+#. module: top_least_selling_report
+#: model:ir.model.fields,help:top_least_selling_report.field_top_least_selling_wizard__limit
+msgid "How many products are listed in the top set and in the least set (per group)."
+msgstr ""
+
+#. module: top_least_selling_report
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_wizard__include_zero_sales
+msgid "Include Products Without Sales"
+msgstr ""
+
+#. module: top_least_selling_report
+#: model:ir.model.fields.selection,name:top_least_selling_report.selection__top_least_selling_report_line__section__least
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.view_top_least_selling_line_search
+msgid "Least Selling"
+msgstr ""
+
+#. module: top_least_selling_report
+#. odoo-python
+#: code:addons/top_least_selling_report/wizard/top_least_selling_wizard.py:0
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.report_top_least_selling_document
+msgid "Least Selling Products"
+msgstr ""
+
+#. module: top_least_selling_report
+#. odoo-python
+#: code:addons/top_least_selling_report/wizard/top_least_selling_wizard.py:0
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.report_top_least_selling_table
+msgid "Margin %"
+msgstr ""
+
+#. module: top_least_selling_report
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_report_line__margin_percent
+msgid "Margin (%)"
+msgstr ""
+
+#. module: top_least_selling_report
+#: model:ir.model.fields,help:top_least_selling_report.field_top_least_selling_wizard__rank_by
+msgid "Measure used to order the products. Quantities are expressed in each product's own unit of measure, so ranking by quantity is best used within similar products."
+msgstr ""
+
+#. module: top_least_selling_report
+#. odoo-python
+#: code:addons/top_least_selling_report/wizard/top_least_selling_wizard.py:0
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.report_top_least_selling_table
+msgid "New"
+msgstr ""
+
+#. module: top_least_selling_report
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_report_line__is_new
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.view_top_least_selling_line_search
+msgid "New in Period"
+msgstr ""
+
+#. module: top_least_selling_report
+#: model:ir.model.fields.selection,name:top_least_selling_report.selection__top_least_selling_wizard__compare_mode__none
+msgid "No Comparison"
+msgstr ""
+
+#. module: top_least_selling_report
+#: model:ir.model.fields.selection,name:top_least_selling_report.selection__top_least_selling_wizard__group_by__none
+msgid "No Grouping"
+msgstr ""
+
+#. module: top_least_selling_report
+#. odoo-python
+#: code:addons/top_least_selling_report/wizard/top_least_selling_wizard.py:0
+msgid "No Sales Team"
+msgstr ""
+
+#. module: top_least_selling_report
+#. odoo-python
+#: code:addons/top_least_selling_report/wizard/top_least_selling_wizard.py:0
+msgid "No Salesperson"
+msgstr ""
+
+#. module: top_least_selling_report
+#. odoo-python
+#: code:addons/top_least_selling_report/wizard/top_least_selling_wizard.py:0
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.report_top_least_selling_table
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.report_top_least_selling_document
+msgid "No sales found for the selected criteria."
+msgstr ""
+
+#. module: top_least_selling_report
+#. odoo-python
+#: code:addons/top_least_selling_report/wizard/top_least_selling_wizard.py:0
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.report_top_least_selling_document
+msgid "None"
+msgstr ""
+
+#. module: top_least_selling_report
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_wizard__limit
+msgid "Number of Products"
+msgstr ""
+
+#. module: top_least_selling_report
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.report_top_least_selling_document
+msgid "Overall Margin"
+msgstr ""
+
+#. module: top_least_selling_report
+#. odoo-python
+#: code:addons/top_least_selling_report/wizard/top_least_selling_wizard.py:0
+msgid "Overall Margin %"
+msgstr ""
+
+#. module: top_least_selling_report
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_wizard__summary_margin_percent
+msgid "Overall Margin (%)"
+msgstr ""
+
+#. module: top_least_selling_report
+#. odoo-python
+#: code:addons/top_least_selling_report/wizard/top_least_selling_wizard.py:0
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.report_top_least_selling_document
+msgid "Period"
+msgstr ""
+
+#. module: top_least_selling_report
+#. odoo-python
+#: code:addons/top_least_selling_report/wizard/top_least_selling_wizard.py:0
+msgid "Please set both dates of the comparison period."
+msgstr ""
+
+#. module: top_least_selling_report
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.report_top_least_selling_table
+msgid "Prev. Profit"
+msgstr ""
+
+#. module: top_least_selling_report
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.report_top_least_selling_table
+msgid "Prev. Quantity"
+msgstr ""
+
+#. module: top_least_selling_report
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.report_top_least_selling_table
+msgid "Prev. Rank"
+msgstr ""
+
+#. module: top_least_selling_report
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.report_top_least_selling_table
+msgid "Prev. Sales"
+msgstr ""
+
+#. module: top_least_selling_report
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_report_line__prev_cost_amount
+msgid "Previous Cost"
+msgstr ""
+
+#. module: top_least_selling_report
+#: model:ir.model.fields.selection,name:top_least_selling_report.selection__top_least_selling_wizard__compare_mode__previous_period
+msgid "Previous Period"
+msgstr ""
+
+#. module: top_least_selling_report
+#. odoo-python
+#: code:addons/top_least_selling_report/wizard/top_least_selling_wizard.py:0
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_report_line__prev_profit_amount
+msgid "Previous Profit"
+msgstr ""
+
+#. module: top_least_selling_report
+#. odoo-python
+#: code:addons/top_least_selling_report/wizard/top_least_selling_wizard.py:0
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_report_line__prev_qty_sold
+msgid "Previous Quantity"
+msgstr ""
+
+#. module: top_least_selling_report
+#. odoo-python
+#: code:addons/top_least_selling_report/wizard/top_least_selling_wizard.py:0
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_report_line__prev_rank
+msgid "Previous Rank"
+msgstr ""
+
+#. module: top_least_selling_report
+#. odoo-python
+#: code:addons/top_least_selling_report/wizard/top_least_selling_wizard.py:0
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_report_line__prev_sales_amount
+msgid "Previous Sales"
+msgstr ""
+
+#. module: top_least_selling_report
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_wizard__summary_prev_profit
+msgid "Previous Total Profit"
+msgstr ""
+
+#. module: top_least_selling_report
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_wizard__summary_prev_sales
+msgid "Previous Total Sales"
+msgstr ""
+
+#. module: top_least_selling_report
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.view_top_least_selling_wizard_form
+msgid "Print PDF"
+msgstr ""
+
+#. module: top_least_selling_report
+#. odoo-python
+#: code:addons/top_least_selling_report/wizard/top_least_selling_wizard.py:0
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_report_line__product_id
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.report_top_least_selling_table
+msgid "Product"
+msgstr ""
+
+#. module: top_least_selling_report
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_wizard__categ_ids
+msgid "Product Categories"
+msgstr ""
+
+#. module: top_least_selling_report
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_report_line__product_categ_id
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.view_top_least_selling_line_search
+msgid "Product Category"
+msgstr ""
+
+#. module: top_least_selling_report
+#. odoo-python
+#: code:addons/top_least_selling_report/wizard/top_least_selling_wizard.py:0
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_wizard__summary_product_count
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.report_top_least_selling_document
+msgid "Products Sold"
+msgstr ""
+
+#. module: top_least_selling_report
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.view_top_least_selling_wizard_form
+msgid "Products are ranked on confirmed sales orders. Amounts are untaxed and shown in the company currency; quantities use each product's unit of measure."
+msgstr ""
+
+#. module: top_least_selling_report
+#. odoo-python
+#: code:addons/top_least_selling_report/wizard/top_least_selling_wizard.py:0
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.report_top_least_selling_document
+msgid "Products per Ranking"
+msgstr ""
+
+#. module: top_least_selling_report
+#. odoo-python
+#: code:addons/top_least_selling_report/wizard/top_least_selling_wizard.py:0
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.report_top_least_selling_table
+msgid "Profit Change %"
+msgstr ""
+
+#. module: top_least_selling_report
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_wizard__summary_profit_change
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_report_line__profit_change_percent
+msgid "Profit Change (%)"
+msgstr ""
+
+#. module: top_least_selling_report
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.report_top_least_selling_table
+msgid "Qty Change %"
+msgstr ""
+
+#. module: top_least_selling_report
+#. odoo-python
+#: code:addons/top_least_selling_report/wizard/top_least_selling_wizard.py:0
+msgid "Quantity Change %"
+msgstr ""
+
+#. module: top_least_selling_report
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_report_line__qty_change_percent
+msgid "Quantity Change (%)"
+msgstr ""
+
+#. module: top_least_selling_report
+#. odoo-python
+#: code:addons/top_least_selling_report/wizard/top_least_selling_wizard.py:0
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_report_line__rank
+msgid "Rank"
+msgstr ""
+
+#. module: top_least_selling_report
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_wizard__rank_by
+msgid "Rank By"
+msgstr ""
+
+#. module: top_least_selling_report
+#. odoo-python
+#: code:addons/top_least_selling_report/wizard/top_least_selling_wizard.py:0
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.report_top_least_selling_document
+msgid "Ranked By"
+msgstr ""
+
+#. module: top_least_selling_report
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_report_line__section
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.view_top_least_selling_line_search
+msgid "Ranking"
+msgstr ""
+
+#. module: top_least_selling_report
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.view_top_least_selling_wizard_form
+msgid "Ranking & Grouping"
+msgstr ""
+
+#. module: top_least_selling_report
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.report_top_least_selling_document
+msgid "Ranking of confirmed sales by product"
+msgstr ""
+
+#. module: top_least_selling_report
+#. odoo-python
+#: code:addons/top_least_selling_report/wizard/top_least_selling_wizard.py:0
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_report_line__wizard_id
+msgid "Report"
+msgstr ""
+
+#. module: top_least_selling_report
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_wizard__line_ids
+msgid "Report Lines"
+msgstr ""
+
+#. module: top_least_selling_report
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.view_top_least_selling_wizard_form
+msgid "Reporting Period"
+msgstr ""
+
+#. module: top_least_selling_report
+#: model:ir.model.fields,help:top_least_selling_report.field_top_least_selling_wizard__include_zero_sales
+msgid "Saleable products that were not sold at all in the period appear first in the least selling set."
+msgstr ""
+
+#. module: top_least_selling_report
+#. odoo-python
+#: code:addons/top_least_selling_report/wizard/top_least_selling_wizard.py:0
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.report_top_least_selling_table
+msgid "Sales Change %"
+msgstr ""
+
+#. module: top_least_selling_report
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_wizard__summary_sales_change
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_report_line__sales_change_percent
+msgid "Sales Change (%)"
+msgstr ""
+
+#. module: top_least_selling_report
+#: model:ir.model.fields.selection,name:top_least_selling_report.selection__top_least_selling_wizard__group_by__team
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_report_line__team_id
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.view_top_least_selling_line_search
+msgid "Sales Team"
+msgstr ""
+
+#. module: top_least_selling_report
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_wizard__team_ids
+msgid "Sales Teams"
+msgstr ""
+
+#. module: top_least_selling_report
+#: model:ir.model.fields.selection,name:top_least_selling_report.selection__top_least_selling_wizard__group_by__user
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_report_line__user_id
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.view_top_least_selling_line_search
+msgid "Salesperson"
+msgstr ""
+
+#. module: top_least_selling_report
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_wizard__user_ids
+msgid "Salespersons"
+msgstr ""
+
+#. module: top_least_selling_report
+#: model:ir.model.fields.selection,name:top_least_selling_report.selection__top_least_selling_wizard__compare_mode__previous_year
+msgid "Same Period Last Year"
+msgstr ""
+
+#. module: top_least_selling_report
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.view_top_least_selling_wizard_form
+msgid "Show on Browser"
+msgstr ""
+
+#. module: top_least_selling_report
+#. odoo-python
+#: code:addons/top_least_selling_report/wizard/top_least_selling_wizard.py:0
+#: model:ir.model.fields.selection,name:top_least_selling_report.selection__top_least_selling_wizard__rank_by__quantity
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_report_line__qty_sold
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.report_top_least_selling_table
+msgid "Sold Quantity"
+msgstr ""
+
+#. module: top_least_selling_report
+#. odoo-python
+#: code:addons/top_least_selling_report/wizard/top_least_selling_wizard.py:0
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_report_line__cost_amount
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.report_top_least_selling_table
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.report_top_least_selling_document
+msgid "Sold Quantity Cost"
+msgstr ""
+
+#. module: top_least_selling_report
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_wizard__date_from
+msgid "Start Date"
+msgstr ""
+
+#. module: top_least_selling_report
+#. odoo-python
+#: code:addons/top_least_selling_report/wizard/top_least_selling_wizard.py:0
+msgid "The comparison start date must be earlier than or equal to the comparison end date."
+msgstr ""
+
+#. module: top_least_selling_report
+#. odoo-python
+#: code:addons/top_least_selling_report/wizard/top_least_selling_wizard.py:0
+#, python-format
+msgid "The number of products must be between 1 and %s."
+msgstr ""
+
+#. module: top_least_selling_report
+#. odoo-python
+#: code:addons/top_least_selling_report/wizard/top_least_selling_wizard.py:0
+msgid "The start date must be earlier than or equal to the end date."
+msgstr ""
+
+#. module: top_least_selling_report
+#. odoo-python
+#: code:addons/top_least_selling_report/wizard/top_least_selling_wizard.py:0
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.view_top_least_selling_wizard_form
+#: model:ir.actions.act_window,name:top_least_selling_report.action_top_least_selling_wizard
+#: model:ir.ui.menu,name:top_least_selling_report.menu_top_least_selling_report
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.view_top_least_selling_line_tree
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.view_top_least_selling_line_pivot
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.view_top_least_selling_line_graph
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.view_top_least_selling_line_search
+#: model:ir.actions.report,name:top_least_selling_report.action_report_top_least_selling
+msgid "Top & Least Selling Products"
+msgstr ""
+
+#. module: top_least_selling_report
+#: model:ir.model,name:top_least_selling_report.model_top_least_selling_wizard
+msgid "Top & Least Selling Products Report Wizard"
+msgstr ""
+
+#. module: top_least_selling_report
+#: model:ir.model,name:top_least_selling_report.model_top_least_selling_report_line
+msgid "Top & Least Selling Report Line"
+msgstr ""
+
+#. module: top_least_selling_report
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.report_top_least_selling_document
+msgid "Top &amp; Least Selling Products"
+msgstr ""
+
+#. module: top_least_selling_report
+#: model:ir.model.fields.selection,name:top_least_selling_report.selection__top_least_selling_report_line__section__top
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.view_top_least_selling_line_search
+msgid "Top Selling"
+msgstr ""
+
+#. module: top_least_selling_report
+#. odoo-python
+#: code:addons/top_least_selling_report/wizard/top_least_selling_wizard.py:0
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.report_top_least_selling_document
+msgid "Top Selling Products"
+msgstr ""
+
+#. module: top_least_selling_report
+#. odoo-python
+#: code:addons/top_least_selling_report/wizard/top_least_selling_wizard.py:0
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.view_top_least_selling_line_tree
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.view_top_least_selling_line_tree_compare
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.report_top_least_selling_table
+msgid "Total"
+msgstr ""
+
+#. module: top_least_selling_report
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_wizard__summary_cost
+msgid "Total Cost"
+msgstr ""
+
+#. module: top_least_selling_report
+#. odoo-python
+#: code:addons/top_least_selling_report/wizard/top_least_selling_wizard.py:0
+#: model:ir.model.fields.selection,name:top_least_selling_report.selection__top_least_selling_wizard__rank_by__profit
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_wizard__summary_profit
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_report_line__profit_amount
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.report_top_least_selling_table
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.report_top_least_selling_document
+msgid "Total Profit"
+msgstr ""
+
+#. module: top_least_selling_report
+#. odoo-python
+#: code:addons/top_least_selling_report/wizard/top_least_selling_wizard.py:0
+#: model:ir.model.fields.selection,name:top_least_selling_report.selection__top_least_selling_wizard__rank_by__revenue
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_report_line__sales_amount
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.report_top_least_selling_table
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.report_top_least_selling_document
+msgid "Total Sale Price"
+msgstr ""
+
+#. module: top_least_selling_report
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_wizard__summary_sales
+msgid "Total Sales"
+msgstr ""
+
+#. module: top_least_selling_report
+#. odoo-python
+#: code:addons/top_least_selling_report/wizard/top_least_selling_wizard.py:0
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_report_line__uom_id
+msgid "Unit of Measure"
+msgstr ""
+
+#. module: top_least_selling_report
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.report_top_least_selling_document
+msgid "Untaxed amounts in company currency. Cost is the product cost recorded on each sales order line."
+msgstr ""
+
+#. module: top_least_selling_report
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.report_top_least_selling_table
+msgid "UoM"
+msgstr ""
+
+#. module: top_least_selling_report
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.report_top_least_selling_document
+msgid "vs. comparison period"
+msgstr ""

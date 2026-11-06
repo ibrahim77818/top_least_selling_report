@@ -1,0 +1,638 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* top_least_selling_report
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-05 11:30+0000\n"
+"PO-Revision-Date: 2026-11-05 11:30+0000\n"
+"Last-Translator: Ibrahim Yahia\n"
+"Language-Team: Arabic\n"
+"Language: ar_001\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+
+#. module: top_least_selling_report
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.view_top_least_selling_wizard_form
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: top_least_selling_report
+#. odoo-python
+#: code:addons/top_least_selling_report/wizard/top_least_selling_wizard.py:0
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_wizard__company_ids
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.report_top_least_selling_document
+msgid "Companies"
+msgstr "الشركات"
+
+#. module: top_least_selling_report
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_wizard__compare_mode
+msgid "Compare With"
+msgstr "المقارنة مع"
+
+#. module: top_least_selling_report
+#: model:ir.model.fields,help:top_least_selling_report.field_top_least_selling_wizard__compare_mode
+msgid "Compare every product with its figures in another period: the period of the same length just before, the same dates one year earlier, or dates you choose."
+msgstr "قارن كل منتج بأرقامه في فترة أخرى: الفترة السابقة مباشرة بنفس الطول، أو نفس التواريخ قبل عام، أو تواريخ تختارها بنفسك."
+
+#. module: top_least_selling_report
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.view_top_least_selling_wizard_form
+msgid "Comparison"
+msgstr "المقارنة"
+
+#. module: top_least_selling_report
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_wizard__compare_date_to
+msgid "Comparison End Date"
+msgstr "تاريخ نهاية المقارنة"
+
+#. module: top_least_selling_report
+#. odoo-python
+#: code:addons/top_least_selling_report/wizard/top_least_selling_wizard.py:0
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.report_top_least_selling_document
+msgid "Comparison Period"
+msgstr "فترة المقارنة"
+
+#. module: top_least_selling_report
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_wizard__compare_date_from
+msgid "Comparison Start Date"
+msgstr "تاريخ بداية المقارنة"
+
+#. module: top_least_selling_report
+#. odoo-python
+#: code:addons/top_least_selling_report/wizard/top_least_selling_wizard.py:0
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_wizard__currency_id
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_report_line__currency_id
+msgid "Currency"
+msgstr "العملة"
+
+#. module: top_least_selling_report
+#: model:ir.model.fields.selection,name:top_least_selling_report.selection__top_least_selling_wizard__compare_mode__custom
+msgid "Custom Period"
+msgstr "فترة مخصصة"
+
+#. module: top_least_selling_report
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_wizard__date_to
+msgid "End Date"
+msgstr "تاريخ النهاية"
+
+#. module: top_least_selling_report
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_wizard__excel_file
+msgid "Excel File"
+msgstr "ملف إكسل"
+
+#. module: top_least_selling_report
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_wizard__excel_filename
+msgid "Excel File Name"
+msgstr "اسم ملف إكسل"
+
+#. module: top_least_selling_report
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.view_top_least_selling_wizard_form
+msgid "Export Excel"
+msgstr "تصدير إلى إكسل"
+
+#. module: top_least_selling_report
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.view_top_least_selling_wizard_form
+msgid "Filters"
+msgstr "عوامل التصفية"
+
+#. module: top_least_selling_report
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_report_line__group_label
+msgid "Group"
+msgstr "المجموعة"
+
+#. module: top_least_selling_report
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_wizard__group_by
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.view_top_least_selling_line_search
+msgid "Group By"
+msgstr "تجميع حسب"
+
+#. module: top_least_selling_report
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_report_line__group_sequence
+msgid "Group Sequence"
+msgstr "تسلسل المجموعة"
+
+#. module: top_least_selling_report
+#. odoo-python
+#: code:addons/top_least_selling_report/wizard/top_least_selling_wizard.py:0
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.report_top_least_selling_document
+msgid "Grouped By"
+msgstr "التجميع حسب"
+
+#. module: top_least_selling_report
+#: model:ir.model.fields,help:top_least_selling_report.field_top_least_selling_wizard__limit
+msgid "How many products are listed in the top set and in the least set (per group)."
+msgstr "عدد المنتجات المعروضة في قائمة الأكثر مبيعاً وفي قائمة الأقل مبيعاً (لكل مجموعة)."
+
+#. module: top_least_selling_report
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_wizard__include_zero_sales
+msgid "Include Products Without Sales"
+msgstr "تضمين المنتجات بدون مبيعات"
+
+#. module: top_least_selling_report
+#: model:ir.model.fields.selection,name:top_least_selling_report.selection__top_least_selling_report_line__section__least
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.view_top_least_selling_line_search
+msgid "Least Selling"
+msgstr "الأقل مبيعاً"
+
+#. module: top_least_selling_report
+#. odoo-python
+#: code:addons/top_least_selling_report/wizard/top_least_selling_wizard.py:0
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.report_top_least_selling_document
+msgid "Least Selling Products"
+msgstr "المنتجات الأقل مبيعاً"
+
+#. module: top_least_selling_report
+#. odoo-python
+#: code:addons/top_least_selling_report/wizard/top_least_selling_wizard.py:0
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.report_top_least_selling_table
+msgid "Margin %"
+msgstr "هامش الربح %"
+
+#. module: top_least_selling_report
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_report_line__margin_percent
+msgid "Margin (%)"
+msgstr "هامش الربح (%)"
+
+#. module: top_least_selling_report
+#: model:ir.model.fields,help:top_least_selling_report.field_top_least_selling_wizard__rank_by
+msgid "Measure used to order the products. Quantities are expressed in each product's own unit of measure, so ranking by quantity is best used within similar products."
+msgstr "المقياس المستخدم لترتيب المنتجات. تُعرض الكميات بوحدة قياس كل منتج، لذا يُفضّل الترتيب حسب الكمية عند المقارنة بين منتجات متشابهة."
+
+#. module: top_least_selling_report
+#. odoo-python
+#: code:addons/top_least_selling_report/wizard/top_least_selling_wizard.py:0
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.report_top_least_selling_table
+msgid "New"
+msgstr "جديد"
+
+#. module: top_least_selling_report
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_report_line__is_new
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.view_top_least_selling_line_search
+msgid "New in Period"
+msgstr "جديد في الفترة"
+
+#. module: top_least_selling_report
+#: model:ir.model.fields.selection,name:top_least_selling_report.selection__top_least_selling_wizard__compare_mode__none
+msgid "No Comparison"
+msgstr "بدون مقارنة"
+
+#. module: top_least_selling_report
+#: model:ir.model.fields.selection,name:top_least_selling_report.selection__top_least_selling_wizard__group_by__none
+msgid "No Grouping"
+msgstr "بدون تجميع"
+
+#. module: top_least_selling_report
+#. odoo-python
+#: code:addons/top_least_selling_report/wizard/top_least_selling_wizard.py:0
+msgid "No Sales Team"
+msgstr "بدون فريق مبيعات"
+
+#. module: top_least_selling_report
+#. odoo-python
+#: code:addons/top_least_selling_report/wizard/top_least_selling_wizard.py:0
+msgid "No Salesperson"
+msgstr "بدون مندوب مبيعات"
+
+#. module: top_least_selling_report
+#. odoo-python
+#: code:addons/top_least_selling_report/wizard/top_least_selling_wizard.py:0
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.report_top_least_selling_table
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.report_top_least_selling_document
+msgid "No sales found for the selected criteria."
+msgstr "لا توجد مبيعات مطابقة للمعايير المحددة"
+
+#. module: top_least_selling_report
+#. odoo-python
+#: code:addons/top_least_selling_report/wizard/top_least_selling_wizard.py:0
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.report_top_least_selling_document
+msgid "None"
+msgstr "لا يوجد"
+
+#. module: top_least_selling_report
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_wizard__limit
+msgid "Number of Products"
+msgstr "عدد المنتجات"
+
+#. module: top_least_selling_report
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.report_top_least_selling_document
+msgid "Overall Margin"
+msgstr "الهامش الإجمالي"
+
+#. module: top_least_selling_report
+#. odoo-python
+#: code:addons/top_least_selling_report/wizard/top_least_selling_wizard.py:0
+msgid "Overall Margin %"
+msgstr "الهامش الإجمالي %"
+
+#. module: top_least_selling_report
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_wizard__summary_margin_percent
+msgid "Overall Margin (%)"
+msgstr "الهامش الإجمالي (%)"
+
+#. module: top_least_selling_report
+#. odoo-python
+#: code:addons/top_least_selling_report/wizard/top_least_selling_wizard.py:0
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.report_top_least_selling_document
+msgid "Period"
+msgstr "الفترة"
+
+#. module: top_least_selling_report
+#. odoo-python
+#: code:addons/top_least_selling_report/wizard/top_least_selling_wizard.py:0
+msgid "Please set both dates of the comparison period."
+msgstr "يرجى تحديد تاريخي بداية ونهاية فترة المقارنة."
+
+#. module: top_least_selling_report
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.report_top_least_selling_table
+msgid "Prev. Profit"
+msgstr "الربح السابق"
+
+#. module: top_least_selling_report
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.report_top_least_selling_table
+msgid "Prev. Quantity"
+msgstr "الكمية السابقة"
+
+#. module: top_least_selling_report
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.report_top_least_selling_table
+msgid "Prev. Rank"
+msgstr "الترتيب السابق"
+
+#. module: top_least_selling_report
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.report_top_least_selling_table
+msgid "Prev. Sales"
+msgstr "المبيعات السابقة"
+
+#. module: top_least_selling_report
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_report_line__prev_cost_amount
+msgid "Previous Cost"
+msgstr "التكلفة السابقة"
+
+#. module: top_least_selling_report
+#: model:ir.model.fields.selection,name:top_least_selling_report.selection__top_least_selling_wizard__compare_mode__previous_period
+msgid "Previous Period"
+msgstr "الفترة السابقة"
+
+#. module: top_least_selling_report
+#. odoo-python
+#: code:addons/top_least_selling_report/wizard/top_least_selling_wizard.py:0
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_report_line__prev_profit_amount
+msgid "Previous Profit"
+msgstr "الربح السابق"
+
+#. module: top_least_selling_report
+#. odoo-python
+#: code:addons/top_least_selling_report/wizard/top_least_selling_wizard.py:0
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_report_line__prev_qty_sold
+msgid "Previous Quantity"
+msgstr "الكمية السابقة"
+
+#. module: top_least_selling_report
+#. odoo-python
+#: code:addons/top_least_selling_report/wizard/top_least_selling_wizard.py:0
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_report_line__prev_rank
+msgid "Previous Rank"
+msgstr "الترتيب السابق"
+
+#. module: top_least_selling_report
+#. odoo-python
+#: code:addons/top_least_selling_report/wizard/top_least_selling_wizard.py:0
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_report_line__prev_sales_amount
+msgid "Previous Sales"
+msgstr "المبيعات السابقة"
+
+#. module: top_least_selling_report
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_wizard__summary_prev_profit
+msgid "Previous Total Profit"
+msgstr "إجمالي الربح السابق"
+
+#. module: top_least_selling_report
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_wizard__summary_prev_sales
+msgid "Previous Total Sales"
+msgstr "إجمالي المبيعات السابقة"
+
+#. module: top_least_selling_report
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.view_top_least_selling_wizard_form
+msgid "Print PDF"
+msgstr "طباعة PDF"
+
+#. module: top_least_selling_report
+#. odoo-python
+#: code:addons/top_least_selling_report/wizard/top_least_selling_wizard.py:0
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_report_line__product_id
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.report_top_least_selling_table
+msgid "Product"
+msgstr "المنتج"
+
+#. module: top_least_selling_report
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_wizard__categ_ids
+msgid "Product Categories"
+msgstr "فئات المنتجات"
+
+#. module: top_least_selling_report
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_report_line__product_categ_id
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.view_top_least_selling_line_search
+msgid "Product Category"
+msgstr "فئة المنتج"
+
+#. module: top_least_selling_report
+#. odoo-python
+#: code:addons/top_least_selling_report/wizard/top_least_selling_wizard.py:0
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_wizard__summary_product_count
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.report_top_least_selling_document
+msgid "Products Sold"
+msgstr "المنتجات المباعة"
+
+#. module: top_least_selling_report
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.view_top_least_selling_wizard_form
+msgid "Products are ranked on confirmed sales orders. Amounts are untaxed and shown in the company currency; quantities use each product's unit of measure."
+msgstr "يتم ترتيب المنتجات بناءً على أوامر البيع المؤكدة. المبالغ بدون ضريبة وبعملة الشركة، والكميات بوحدة قياس كل منتج."
+
+#. module: top_least_selling_report
+#. odoo-python
+#: code:addons/top_least_selling_report/wizard/top_least_selling_wizard.py:0
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.report_top_least_selling_document
+msgid "Products per Ranking"
+msgstr "عدد المنتجات في كل تصنيف"
+
+#. module: top_least_selling_report
+#. odoo-python
+#: code:addons/top_least_selling_report/wizard/top_least_selling_wizard.py:0
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.report_top_least_selling_table
+msgid "Profit Change %"
+msgstr "تغير الربح %"
+
+#. module: top_least_selling_report
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_wizard__summary_profit_change
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_report_line__profit_change_percent
+msgid "Profit Change (%)"
+msgstr "تغير الربح (%)"
+
+#. module: top_least_selling_report
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.report_top_least_selling_table
+msgid "Qty Change %"
+msgstr "تغير الكمية %"
+
+#. module: top_least_selling_report
+#. odoo-python
+#: code:addons/top_least_selling_report/wizard/top_least_selling_wizard.py:0
+msgid "Quantity Change %"
+msgstr "تغير الكمية %"
+
+#. module: top_least_selling_report
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_report_line__qty_change_percent
+msgid "Quantity Change (%)"
+msgstr "تغير الكمية (%)"
+
+#. module: top_least_selling_report
+#. odoo-python
+#: code:addons/top_least_selling_report/wizard/top_least_selling_wizard.py:0
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_report_line__rank
+msgid "Rank"
+msgstr "الترتيب"
+
+#. module: top_least_selling_report
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_wizard__rank_by
+msgid "Rank By"
+msgstr "الترتيب حسب"
+
+#. module: top_least_selling_report
+#. odoo-python
+#: code:addons/top_least_selling_report/wizard/top_least_selling_wizard.py:0
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.report_top_least_selling_document
+msgid "Ranked By"
+msgstr "الترتيب حسب"
+
+#. module: top_least_selling_report
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_report_line__section
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.view_top_least_selling_line_search
+msgid "Ranking"
+msgstr "التصنيف"
+
+#. module: top_least_selling_report
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.view_top_least_selling_wizard_form
+msgid "Ranking & Grouping"
+msgstr "الترتيب والتجميع"
+
+#. module: top_least_selling_report
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.report_top_least_selling_document
+msgid "Ranking of confirmed sales by product"
+msgstr "ترتيب المبيعات المؤكدة حسب المنتج"
+
+#. module: top_least_selling_report
+#. odoo-python
+#: code:addons/top_least_selling_report/wizard/top_least_selling_wizard.py:0
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_report_line__wizard_id
+msgid "Report"
+msgstr "التقرير"
+
+#. module: top_least_selling_report
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_wizard__line_ids
+msgid "Report Lines"
+msgstr "أسطر التقرير"
+
+#. module: top_least_selling_report
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.view_top_least_selling_wizard_form
+msgid "Reporting Period"
+msgstr "فترة التقرير"
+
+#. module: top_least_selling_report
+#: model:ir.model.fields,help:top_least_selling_report.field_top_least_selling_wizard__include_zero_sales
+msgid "Saleable products that were not sold at all in the period appear first in the least selling set."
+msgstr "المنتجات القابلة للبيع التي لم تُبع إطلاقاً خلال الفترة تظهر أولاً في قائمة الأقل مبيعاً."
+
+#. module: top_least_selling_report
+#. odoo-python
+#: code:addons/top_least_selling_report/wizard/top_least_selling_wizard.py:0
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.report_top_least_selling_table
+msgid "Sales Change %"
+msgstr "تغير المبيعات %"
+
+#. module: top_least_selling_report
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_wizard__summary_sales_change
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_report_line__sales_change_percent
+msgid "Sales Change (%)"
+msgstr "تغير المبيعات (%)"
+
+#. module: top_least_selling_report
+#: model:ir.model.fields.selection,name:top_least_selling_report.selection__top_least_selling_wizard__group_by__team
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_report_line__team_id
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.view_top_least_selling_line_search
+msgid "Sales Team"
+msgstr "فريق المبيعات"
+
+#. module: top_least_selling_report
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_wizard__team_ids
+msgid "Sales Teams"
+msgstr "فرق المبيعات"
+
+#. module: top_least_selling_report
+#: model:ir.model.fields.selection,name:top_least_selling_report.selection__top_least_selling_wizard__group_by__user
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_report_line__user_id
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.view_top_least_selling_line_search
+msgid "Salesperson"
+msgstr "مندوب المبيعات"
+
+#. module: top_least_selling_report
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_wizard__user_ids
+msgid "Salespersons"
+msgstr "مندوبو المبيعات"
+
+#. module: top_least_selling_report
+#: model:ir.model.fields.selection,name:top_least_selling_report.selection__top_least_selling_wizard__compare_mode__previous_year
+msgid "Same Period Last Year"
+msgstr "نفس الفترة من العام الماضي"
+
+#. module: top_least_selling_report
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.view_top_least_selling_wizard_form
+msgid "Show on Browser"
+msgstr "عرض في المتصفح"
+
+#. module: top_least_selling_report
+#. odoo-python
+#: code:addons/top_least_selling_report/wizard/top_least_selling_wizard.py:0
+#: model:ir.model.fields.selection,name:top_least_selling_report.selection__top_least_selling_wizard__rank_by__quantity
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_report_line__qty_sold
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.report_top_least_selling_table
+msgid "Sold Quantity"
+msgstr "الكمية المباعة"
+
+#. module: top_least_selling_report
+#. odoo-python
+#: code:addons/top_least_selling_report/wizard/top_least_selling_wizard.py:0
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_report_line__cost_amount
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.report_top_least_selling_table
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.report_top_least_selling_document
+msgid "Sold Quantity Cost"
+msgstr "تكلفة الكمية المباعة"
+
+#. module: top_least_selling_report
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_wizard__date_from
+msgid "Start Date"
+msgstr "تاريخ البداية"
+
+#. module: top_least_selling_report
+#. odoo-python
+#: code:addons/top_least_selling_report/wizard/top_least_selling_wizard.py:0
+msgid "The comparison start date must be earlier than or equal to the comparison end date."
+msgstr "يجب أن يكون تاريخ بداية المقارنة قبل تاريخ نهاية المقارنة أو مساوياً له."
+
+#. module: top_least_selling_report
+#. odoo-python
+#: code:addons/top_least_selling_report/wizard/top_least_selling_wizard.py:0
+#, python-format
+msgid "The number of products must be between 1 and %s."
+msgstr "يجب أن يكون عدد المنتجات بين 1 و %s."
+
+#. module: top_least_selling_report
+#. odoo-python
+#: code:addons/top_least_selling_report/wizard/top_least_selling_wizard.py:0
+msgid "The start date must be earlier than or equal to the end date."
+msgstr "يجب أن يكون تاريخ البداية قبل تاريخ النهاية أو مساوياً له."
+
+#. module: top_least_selling_report
+#. odoo-python
+#: code:addons/top_least_selling_report/wizard/top_least_selling_wizard.py:0
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.view_top_least_selling_wizard_form
+#: model:ir.actions.act_window,name:top_least_selling_report.action_top_least_selling_wizard
+#: model:ir.ui.menu,name:top_least_selling_report.menu_top_least_selling_report
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.view_top_least_selling_line_tree
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.view_top_least_selling_line_pivot
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.view_top_least_selling_line_graph
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.view_top_least_selling_line_search
+#: model:ir.actions.report,name:top_least_selling_report.action_report_top_least_selling
+msgid "Top & Least Selling Products"
+msgstr "المنتجات الأكثر والأقل مبيعاً"
+
+#. module: top_least_selling_report
+#: model:ir.model,name:top_least_selling_report.model_top_least_selling_wizard
+msgid "Top & Least Selling Products Report Wizard"
+msgstr "معالج تقرير المنتجات الأكثر والأقل مبيعاً"
+
+#. module: top_least_selling_report
+#: model:ir.model,name:top_least_selling_report.model_top_least_selling_report_line
+msgid "Top & Least Selling Report Line"
+msgstr "سطر تقرير المنتجات الأكثر والأقل مبيعاً"
+
+#. module: top_least_selling_report
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.report_top_least_selling_document
+msgid "Top &amp; Least Selling Products"
+msgstr "المنتجات الأكثر والأقل مبيعاً"
+
+#. module: top_least_selling_report
+#: model:ir.model.fields.selection,name:top_least_selling_report.selection__top_least_selling_report_line__section__top
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.view_top_least_selling_line_search
+msgid "Top Selling"
+msgstr "الأكثر مبيعاً"
+
+#. module: top_least_selling_report
+#. odoo-python
+#: code:addons/top_least_selling_report/wizard/top_least_selling_wizard.py:0
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.report_top_least_selling_document
+msgid "Top Selling Products"
+msgstr "المنتجات الأكثر مبيعاً"
+
+#. module: top_least_selling_report
+#. odoo-python
+#: code:addons/top_least_selling_report/wizard/top_least_selling_wizard.py:0
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.view_top_least_selling_line_tree
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.view_top_least_selling_line_tree_compare
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.report_top_least_selling_table
+msgid "Total"
+msgstr "الإجمالي"
+
+#. module: top_least_selling_report
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_wizard__summary_cost
+msgid "Total Cost"
+msgstr "إجمالي التكلفة"
+
+#. module: top_least_selling_report
+#. odoo-python
+#: code:addons/top_least_selling_report/wizard/top_least_selling_wizard.py:0
+#: model:ir.model.fields.selection,name:top_least_selling_report.selection__top_least_selling_wizard__rank_by__profit
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_wizard__summary_profit
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_report_line__profit_amount
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.report_top_least_selling_table
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.report_top_least_selling_document
+msgid "Total Profit"
+msgstr "إجمالي الربح"
+
+#. module: top_least_selling_report
+#. odoo-python
+#: code:addons/top_least_selling_report/wizard/top_least_selling_wizard.py:0
+#: model:ir.model.fields.selection,name:top_least_selling_report.selection__top_least_selling_wizard__rank_by__revenue
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_report_line__sales_amount
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.report_top_least_selling_table
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.report_top_least_selling_document
+msgid "Total Sale Price"
+msgstr "إجمالي سعر البيع"
+
+#. module: top_least_selling_report
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_wizard__summary_sales
+msgid "Total Sales"
+msgstr "إجمالي المبيعات"
+
+#. module: top_least_selling_report
+#. odoo-python
+#: code:addons/top_least_selling_report/wizard/top_least_selling_wizard.py:0
+#: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_report_line__uom_id
+msgid "Unit of Measure"
+msgstr "وحدة القياس"
+
+#. module: top_least_selling_report
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.report_top_least_selling_document
+msgid "Untaxed amounts in company currency. Cost is the product cost recorded on each sales order line."
+msgstr "المبالغ بدون ضريبة وبعملة الشركة والتكلفة هي تكلفة المنتج المسجلة في كل سطر من أوامر البيع"
+
+#. module: top_least_selling_report
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.report_top_least_selling_table
+msgid "UoM"
+msgstr "وحدة القياس"
+
+#. module: top_least_selling_report
+#: model_terms:ir.ui.view,arch_db:top_least_selling_report.report_top_least_selling_document
+msgid "vs. comparison period"
+msgstr "مقارنة بفترة المقارنة"

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_top_least_selling_wizard_form" model="ir.ui.view">
+        <field name="name">top.least.selling.wizard.form</field>
+        <field name="model">top.least.selling.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Top &amp; Least Selling Products">
+                <div class="alert alert-info mb-3" role="alert">Products are ranked on confirmed sales orders. Amounts are untaxed and shown in the company currency; quantities use each product's unit of measure.</div>
+                <group>
+                    <group string="Reporting Period">
+                        <field name="date_from"/>
+                        <field name="date_to"/>
+                    </group>
+                    <group string="Comparison">
+                        <field name="compare_mode" widget="radio"/>
+                        <field name="compare_date_from" force_save="1"
+                               attrs="{'invisible': [('compare_mode', '=', 'none')], 'readonly': [('compare_mode', '!=', 'custom')], 'required': [('compare_mode', '!=', 'none')]}"/>
+                        <field name="compare_date_to" force_save="1"
+                               attrs="{'invisible': [('compare_mode', '=', 'none')], 'readonly': [('compare_mode', '!=', 'custom')], 'required': [('compare_mode', '!=', 'none')]}"/>
+                    </group>
+                </group>
+                <group>
+                    <group string="Ranking &amp; Grouping">
+                        <field name="rank_by" widget="radio"/>
+                        <field name="limit"/>
+                        <field name="group_by"/>
+                        <field name="include_zero_sales" attrs="{'invisible': [('group_by', '!=', 'none')]}"/>
+                    </group>
+                    <group string="Filters">
+                        <field name="company_ids" widget="many2many_tags" options="{'no_create': True}" groups="base.group_multi_company"/>
+                        <field name="team_ids" widget="many2many_tags" options="{'no_create': True}"/>
+                        <field name="user_ids" widget="many2many_tags" options="{'no_create': True}"/>
+                        <field name="categ_ids" widget="many2many_tags" options="{'no_create': True}"/>
+                        <field name="currency_id" invisible="1"/>
+                    </group>
+                </group>
+                <footer>
+                    <button name="action_show_browser" string="Show on Browser" type="object" class="btn-primary" icon="fa-table" data-hotkey="q"/>
+                    <button name="action_print_pdf" string="Print PDF" type="object" class="btn-secondary" icon="fa-file-pdf-o" data-hotkey="w"/>
+                    <button name="action_export_excel" string="Export Excel" type="object" class="btn-secondary" icon="fa-file-excel-o" data-hotkey="e"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel" data-hotkey="z"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_top_least_selling_wizard" model="ir.actions.act_window">
+        <field name="name">Top &amp; Least Selling Products</field>
+        <field name="res_model">top.least.selling.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_top_least_selling_wizard_form"/>
+        <field name="target">new</field>
+    </record>
+
+</odoo>
