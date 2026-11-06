@@ -40,28 +40,28 @@
                     <td class="tls-empty" t-att-colspan="15 if tls_compare else 8">No sales found for the selected criteria.</td>
                 </tr>
                 <tr t-foreach="lines" t-as="line">
-                    <td class="tls-col-rank"><div class="tls-rank-badge" t-esc="line.rank"/></td>
-                    <td t-att-style="tls_txt" class="tls-product" t-esc="o._bidi_text(line.product_id.display_name)"/>
-                    <td t-att-style="tls_txt" t-esc="line.uom_id.name"/>
-                    <td t-att-style="tls_num" t-esc="line.qty_sold" t-options="{'widget': 'float', 'decimal_precision': 'Product Unit of Measure'}"/>
-                    <td t-att-style="tls_num" t-esc="line.cost_amount" t-options="{'widget': 'monetary', 'display_currency': line.currency_id}"/>
-                    <td t-att-style="tls_num" t-esc="line.sales_amount" t-options="{'widget': 'monetary', 'display_currency': line.currency_id}"/>
-                    <td t-att-style="tls_num" t-esc="line.profit_amount" t-options="{'widget': 'monetary', 'display_currency': line.currency_id}"
+                    <td class="tls-col-rank"><div class="tls-rank-badge" t-out="line.rank"/></td>
+                    <td t-att-style="tls_txt" class="tls-product" t-out="o._bidi_text(line.product_id.display_name)"/>
+                    <td t-att-style="tls_txt" t-out="line.uom_id.name"/>
+                    <td t-att-style="tls_num" t-out="line.qty_sold" t-options="{'widget': 'float', 'decimal_precision': 'Product Unit of Measure'}"/>
+                    <td t-att-style="tls_num" t-out="line.cost_amount" t-options="{'widget': 'monetary', 'display_currency': line.currency_id}"/>
+                    <td t-att-style="tls_num" t-out="line.sales_amount" t-options="{'widget': 'monetary', 'display_currency': line.currency_id}"/>
+                    <td t-att-style="tls_num" t-out="line.profit_amount" t-options="{'widget': 'monetary', 'display_currency': line.currency_id}"
                         t-attf-class="#{'tls-neg' if line.profit_amount &lt; 0 else ''}"/>
-                    <td t-att-style="tls_num" dir="ltr" t-esc="o._format_percent(line.margin_percent)"/>
+                    <td t-att-style="tls_num" dir="ltr" t-out="o._format_percent(line.margin_percent)"/>
                     <t t-if="tls_compare">
-                        <td t-att-style="tls_num" t-esc="line.prev_qty_sold" t-options="{'widget': 'float', 'decimal_precision': 'Product Unit of Measure'}"/>
-                        <td t-att-style="tls_num" t-esc="line.prev_sales_amount" t-options="{'widget': 'monetary', 'display_currency': line.currency_id}"/>
-                        <td t-att-style="tls_num" t-esc="line.prev_profit_amount" t-options="{'widget': 'monetary', 'display_currency': line.currency_id}"/>
-                        <td t-att-style="tls_num" dir="ltr" t-esc="o._format_percent(line.qty_change_percent, signed=True)"
+                        <td t-att-style="tls_num" t-out="line.prev_qty_sold" t-options="{'widget': 'float', 'decimal_precision': 'Product Unit of Measure'}"/>
+                        <td t-att-style="tls_num" t-out="line.prev_sales_amount" t-options="{'widget': 'monetary', 'display_currency': line.currency_id}"/>
+                        <td t-att-style="tls_num" t-out="line.prev_profit_amount" t-options="{'widget': 'monetary', 'display_currency': line.currency_id}"/>
+                        <td t-att-style="tls_num" dir="ltr" t-out="o._format_percent(line.qty_change_percent, signed=True)"
                             t-attf-class="#{'tls-pos' if line.qty_change_percent &gt; 0 else ('tls-neg' if line.qty_change_percent &lt; 0 else '')}"/>
-                        <td t-att-style="tls_num" dir="ltr" t-esc="o._format_percent(line.sales_change_percent, signed=True)"
+                        <td t-att-style="tls_num" dir="ltr" t-out="o._format_percent(line.sales_change_percent, signed=True)"
                             t-attf-class="#{'tls-pos' if line.sales_change_percent &gt; 0 else ('tls-neg' if line.sales_change_percent &lt; 0 else '')}"/>
-                        <td t-att-style="tls_num" dir="ltr" t-esc="o._format_percent(line.profit_change_percent, signed=True)"
+                        <td t-att-style="tls_num" dir="ltr" t-out="o._format_percent(line.profit_change_percent, signed=True)"
                             t-attf-class="#{'tls-pos' if line.profit_change_percent &gt; 0 else ('tls-neg' if line.profit_change_percent &lt; 0 else '')}"/>
                         <td class="tls-col-rank">
                             <t t-if="line.is_new"><div class="tls-new-badge">New</div></t>
-                            <t t-elif="line.prev_rank"><t t-esc="line.prev_rank"/></t>
+                            <t t-elif="line.prev_rank"><t t-out="line.prev_rank"/></t>
                             <t t-else="">-</t>
                         </td>
                     </t>
@@ -70,10 +70,10 @@
             <tfoot t-if="lines">
                 <tr>
                     <td colspan="4" t-att-style="tls_txt">Total</td>
-                    <td t-att-style="tls_num" t-esc="totals['cost']" t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
-                    <td t-att-style="tls_num" t-esc="totals['sales']" t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
-                    <td t-att-style="tls_num" t-esc="totals['profit']" t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
-                    <td t-att-style="tls_num" dir="ltr" t-esc="o._format_percent(totals['margin'])"/>
+                    <td t-att-style="tls_num" t-out="totals['cost']" t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
+                    <td t-att-style="tls_num" t-out="totals['sales']" t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
+                    <td t-att-style="tls_num" t-out="totals['profit']" t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
+                    <td t-att-style="tls_num" dir="ltr" t-out="o._format_percent(totals['margin'])"/>
                     <td t-if="tls_compare" colspan="7"/>
                 </tr>
             </tfoot>
@@ -97,24 +97,24 @@
                 <table class="tls-criteria">
                     <tr>
                         <th t-att-style="tls_txt">Period</th>
-                        <td t-att-style="tls_txt" t-esc="o._format_period(o.date_from, o.date_to)"/>
+                        <td t-att-style="tls_txt" t-out="o._format_period(o.date_from, o.date_to)"/>
                         <th t-att-style="tls_txt">Ranked By</th>
-                        <td t-att-style="tls_txt" t-esc="o._get_selection_label('rank_by')"/>
+                        <td t-att-style="tls_txt" t-out="o._get_selection_label('rank_by')"/>
                     </tr>
                     <tr>
                         <th t-att-style="tls_txt">Comparison Period</th>
                         <td t-att-style="tls_txt">
-                            <t t-if="tls_compare"><t t-esc="o._format_period(o.compare_date_from, o.compare_date_to)"/></t>
+                            <t t-if="tls_compare"><t t-out="o._format_period(o.compare_date_from, o.compare_date_to)"/></t>
                             <t t-else="">None</t>
                         </td>
                         <th t-att-style="tls_txt">Products per Ranking</th>
-                        <td t-att-style="tls_txt" t-esc="o.limit"/>
+                        <td t-att-style="tls_txt" t-out="o.limit"/>
                     </tr>
                     <tr>
                         <th t-att-style="tls_txt">Grouped By</th>
-                        <td t-att-style="tls_txt" t-esc="o._get_selection_label('group_by')"/>
+                        <td t-att-style="tls_txt" t-out="o._get_selection_label('group_by')"/>
                         <th t-att-style="tls_txt">Companies</th>
-                        <td t-att-style="tls_txt" t-esc="o._get_company_names()"/>
+                        <td t-att-style="tls_txt" t-out="o._get_company_names()"/>
                     </tr>
                 </table>
 
@@ -122,33 +122,33 @@
                     <tr>
                         <td class="tls-kpi">
                             <div class="tls-kpi-label">Products Sold</div>
-                            <div class="tls-kpi-value" t-esc="o.summary_product_count"/>
+                            <div class="tls-kpi-value" t-out="o.summary_product_count"/>
                         </td>
                         <td class="tls-kpi">
                             <div class="tls-kpi-label">Total Sale Price</div>
-                            <div class="tls-kpi-value" t-esc="o.summary_sales" t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
+                            <div class="tls-kpi-value" t-out="o.summary_sales" t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
                             <t t-if="tls_compare">
                                 <div class="tls-kpi-sub">vs. comparison period</div>
                                 <div dir="ltr" t-attf-class="tls-kpi-delta #{'tls-pos' if o.summary_sales_change &gt; 0 else ('tls-neg' if o.summary_sales_change &lt; 0 else '')}"
-                                     t-esc="o._format_percent(o.summary_sales_change, signed=True)"/>
+                                     t-out="o._format_percent(o.summary_sales_change, signed=True)"/>
                             </t>
                         </td>
                         <td class="tls-kpi">
                             <div class="tls-kpi-label">Sold Quantity Cost</div>
-                            <div class="tls-kpi-value" t-esc="o.summary_cost" t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
+                            <div class="tls-kpi-value" t-out="o.summary_cost" t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
                         </td>
                         <td class="tls-kpi">
                             <div class="tls-kpi-label">Total Profit</div>
-                            <div class="tls-kpi-value" t-esc="o.summary_profit" t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
+                            <div class="tls-kpi-value" t-out="o.summary_profit" t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
                             <t t-if="tls_compare">
                                 <div class="tls-kpi-sub">vs. comparison period</div>
                                 <div dir="ltr" t-attf-class="tls-kpi-delta #{'tls-pos' if o.summary_profit_change &gt; 0 else ('tls-neg' if o.summary_profit_change &lt; 0 else '')}"
-                                     t-esc="o._format_percent(o.summary_profit_change, signed=True)"/>
+                                     t-out="o._format_percent(o.summary_profit_change, signed=True)"/>
                             </t>
                         </td>
                         <td class="tls-kpi">
                             <div class="tls-kpi-label">Overall Margin</div>
-                            <div class="tls-kpi-value" dir="ltr" t-esc="o._format_percent(o.summary_margin_percent)"/>
+                            <div class="tls-kpi-value" dir="ltr" t-out="o._format_percent(o.summary_margin_percent)"/>
                         </td>
                     </tr>
                 </table>
@@ -157,7 +157,7 @@
                 <div t-if="not tls_groups" class="tls-empty-block">No sales found for the selected criteria.</div>
                 <t t-foreach="tls_groups" t-as="grp">
                     <div class="tls-group">
-                        <div t-if="grp['label']" class="tls-group-title" t-att-style="tls_txt" t-esc="o._bidi_text(grp['label'])"/>
+                        <div t-if="grp['label']" class="tls-group-title" t-att-style="tls_txt" t-out="o._bidi_text(grp['label'])"/>
 
                         <div class="tls-section-title tls-section-top" t-att-style="tls_txt">Top Selling Products</div>
                         <t t-call="top_least_selling_report.report_top_least_selling_table">

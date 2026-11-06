@@ -15,9 +15,9 @@
                     <group string="Comparison">
                         <field name="compare_mode" widget="radio"/>
                         <field name="compare_date_from" force_save="1"
-                               attrs="{'invisible': [('compare_mode', '=', 'none')], 'readonly': [('compare_mode', '!=', 'custom')], 'required': [('compare_mode', '!=', 'none')]}"/>
+                               invisible="compare_mode == 'none'" readonly="compare_mode != 'custom'" required="compare_mode != 'none'"/>
                         <field name="compare_date_to" force_save="1"
-                               attrs="{'invisible': [('compare_mode', '=', 'none')], 'readonly': [('compare_mode', '!=', 'custom')], 'required': [('compare_mode', '!=', 'none')]}"/>
+                               invisible="compare_mode == 'none'" readonly="compare_mode != 'custom'" required="compare_mode != 'none'"/>
                     </group>
                 </group>
                 <group>
@@ -25,7 +25,7 @@
                         <field name="rank_by" widget="radio"/>
                         <field name="limit"/>
                         <field name="group_by"/>
-                        <field name="include_zero_sales" attrs="{'invisible': [('group_by', '!=', 'none')]}"/>
+                        <field name="include_zero_sales" invisible="group_by != 'none'"/>
                     </group>
                     <group string="Filters">
                         <field name="company_ids" widget="many2many_tags" options="{'no_create': True}" groups="base.group_multi_company"/>

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': 'Top & Least Selling Products Report',
-    'version': '16.0.1.0.0',
+    'version': '17.0.1.0.0',
     'summary': 'Rank top and least selling products by quantity, revenue or profit '
                'with period comparison, team/salesperson grouping, browser, PDF and Excel output.',
     'description': """

@@ -2,7 +2,7 @@
 Top & Least Selling Products Report
 ===================================
 
-Odoo 16 (Community & Enterprise). Author: Ibrahim Yahia.
+Odoo 17 (Community & Enterprise). Author: Ibrahim Yahia.
 
 Usage
 =====
@@ -26,7 +26,7 @@ Outputs
 
 How figures are computed
 ========================
-* Source: confirmed sales orders (state *Sales Order* or *Locked*) through ``sale.report``,
+* Source: confirmed sales orders (state *Sales Order*, locked or not) through ``sale.report``,
   aggregated in PostgreSQL. Point-of-sale orders are not included.
 * Sold Quantity is converted to the product's reference unit of measure.
 * Total Sale Price is the untaxed subtotal; Sold Quantity Cost is the cost stored on the sales

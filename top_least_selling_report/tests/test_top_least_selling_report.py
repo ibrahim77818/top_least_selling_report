@@ -25,6 +25,7 @@ class TestTopLeastSellingReport(TransactionCase):
       SO2 team South / manager:   Alpha  5 x 14 (cost 6)  ->  70 / 30 / 40
                                   Charlie 2 Dozens x 24 (cost 12/dozen) -> 24 Units, 48 / 24 / 24
       Excluded: a draft order, a cancelled order and an April order.
+      A locked order (Odoo 17 lock flag) is still counted.
 
     Previous period (29 Jan - 28 Feb 2026)
       SO3 team North:             Alpha 20 x 15 (cost 6)  -> 300 / 120 / 180
@@ -47,7 +48,7 @@ class TestTopLeastSellingReport(TransactionCase):
         def make_product(name, cost):
             return cls.env['product.product'].create({
                 'name': name,
-                'type': 'consu',
+                'detailed_type': 'consu',
                 'categ_id': cls.categ.id,
                 'sale_ok': True,
                 'list_price': 1.0,
@@ -88,9 +89,11 @@ class TestTopLeastSellingReport(TransactionCase):
         })
 
         march = '2026-03-10 12:00:00'
-        cls._create_order(
+        cls.order_north = cls._create_order(
             [(cls.alpha, 10, 15.0, 6.0, None), (cls.bravo, 2, 100.0, 30.0, None)],
             march, cls.team_north, cls.salesman)
+        # Odoo 17 has no 'done' state any more: a locked order keeps state 'sale'.
+        cls.order_north.action_lock()
         cls._create_order(
             [(cls.alpha, 5, 14.0, 6.0, None), (cls.charlie, 2, 24.0, 12.0, cls.uom_dozen)],
             march, cls.team_south, cls.manager)
@@ -182,6 +185,14 @@ class TestTopLeastSellingReport(TransactionCase):
         self.assertAlmostEqual(wizard.summary_cost, 174.0)
         self.assertAlmostEqual(wizard.summary_profit, 294.0)
         self.assertAlmostEqual(wizard.summary_margin_percent, 294.0 / 468.0 * 100.0, places=2)
+
+    def test_01b_locked_orders_are_counted(self):
+        self.assertTrue(self.order_north.locked)
+        self.assertEqual(self.order_north.state, 'sale')
+        wizard = self._wizard()
+        wizard._generate_lines()
+        bravo = self._section(wizard, 'top').filtered(lambda l: l.product_id == self.bravo)
+        self.assertAlmostEqual(bravo.sales_amount, 200.0, msg="Bravo is only sold on the locked order")
 
     def test_02_uom_conversion(self):
         """Lines sold in Dozens are reported in the product's reference unit."""

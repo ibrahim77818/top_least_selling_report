@@ -140,7 +140,7 @@ class TopLeastSellingWizard(models.TransientModel):
         domain = [
             ('date', '>=', start),
             ('date', '<=', end),
-            ('state', 'in', ('sale', 'done')),
+            ('state', '=', 'sale'),
             ('product_id', '!=', False),
             ('company_id', 'in', companies.ids),
         ]
