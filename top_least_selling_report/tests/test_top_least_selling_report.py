@@ -54,7 +54,6 @@ class TestTopLeastSellingReport(TransactionCase):
                 'list_price': 1.0,
                 'standard_price': cost,
                 'uom_id': cls.uom_unit.id,
-                'uom_po_id': cls.uom_unit.id,
                 'company_id': False,
             })
 
@@ -77,7 +76,7 @@ class TestTopLeastSellingReport(TransactionCase):
             'email': 'tls.salesman@example.com',
             'company_id': cls.company.id,
             'company_ids': [Command.set(cls.company.ids)],
-            'groups_id': [Command.set([cls.env.ref('sales_team.group_sale_salesman_all_leads').id])],
+            'group_ids': [Command.set([cls.env.ref('sales_team.group_sale_salesman_all_leads').id])],
         })
         cls.manager = cls.env['res.users'].create({
             'name': 'TLS Manager',
@@ -85,7 +84,7 @@ class TestTopLeastSellingReport(TransactionCase):
             'email': 'tls.manager@example.com',
             'company_id': cls.company.id,
             'company_ids': [Command.set(cls.company.ids)],
-            'groups_id': [Command.set([cls.env.ref('sales_team.group_sale_manager').id])],
+            'group_ids': [Command.set([cls.env.ref('sales_team.group_sale_manager').id])],
         })
 
         march = '2026-03-10 12:00:00'
@@ -117,10 +116,10 @@ class TestTopLeastSellingReport(TransactionCase):
             'order_line': [Command.create({
                 'product_id': product.id,
                 'product_uom_qty': qty,
-                'product_uom': (uom or product.uom_id).id,
+                'product_uom_id': (uom or product.uom_id).id,
                 'price_unit': price,
                 'purchase_price': cost,
-                'tax_id': [Command.clear()],
+                'tax_ids': [Command.clear()],
             }) for product, qty, price, cost, uom in lines],
         })
         if state in ('sale', 'cancel'):
@@ -353,9 +352,9 @@ class TestTopLeastSellingReport(TransactionCase):
         lines = self.env['top.least.selling.report.line'].search(action['domain'])
         self.assertEqual(lines, wizard.line_ids)
         # The pivot view aggregates correctly.
-        data = self.env['top.least.selling.report.line'].read_group(
-            action['domain'] + [('section', '=', 'top')], ['sales_amount:sum'], [])
-        self.assertAlmostEqual(data[0]['sales_amount'], 468.0)
+        [(top_sales,)] = self.env['top.least.selling.report.line']._read_group(
+            action['domain'] + [('section', '=', 'top')], [], ['sales_amount:sum'])
+        self.assertAlmostEqual(top_sales, 468.0)
 
     def test_13_regeneration_replaces_lines(self):
         wizard = self._wizard()

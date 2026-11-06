@@ -1,4 +1,4 @@
-# Top & Least Selling Products Report (Odoo 18.0)
+# Top & Least Selling Products Report (Odoo 19.0)
 
 ![Top & Least Selling Products](top_least_selling_report/static/description/banner.png)
 
@@ -6,11 +6,11 @@ Odoo app that ranks your products from the **best** to the **least** selling, by
 total sale price or total profit. It compares any two periods, groups by sales team or
 salesperson, and outputs to the browser, a PDF or an Excel file, in English and Arabic (RTL).
 
-**Branches:** [16.0](../../tree/16.0) · [17.0](../../tree/17.0) · **18.0** · [19.0](../../tree/19.0). Each branch holds the module ported to that Odoo version.
+**Branches:** [16.0](../../tree/16.0) · [17.0](../../tree/17.0) · [18.0](../../tree/18.0) · **19.0**. Each branch holds the module ported to that Odoo version.
 
 | | |
 |---|---|
-| Odoo version | 18.0, Community and Enterprise |
+| Odoo version | 19.0, Community and Enterprise |
 | Technical name | `top_least_selling_report` |
 | Depends on | `sale_management`, `sale_margin` |
 | Python dependency | `xlsxwriter` (already part of Odoo's requirements) |
@@ -40,7 +40,7 @@ sales order line, and Total Profit = Total Sale Price − Sold Quantity Cost.
 ## Installation
 
 1. Put the `top_least_selling_report` folder in your addons path, or add this repository
-   (branch `18.0`) as an addons path / Odoo.sh submodule.
+   (branch `19.0`) as an addons path / Odoo.sh submodule.
 2. Update the apps list and install **Top & Least Selling Products Report**.
 3. Open **Sales › Reporting › Top & Least Selling Products**.
 

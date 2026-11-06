@@ -2,7 +2,7 @@
 """Pure-Python computation core of the Top & Least Selling report.
 
 Nothing in this file imports Odoo: the wizard fetches pre-aggregated rows from
-PostgreSQL (``sale.report`` read_group) and hands plain dictionaries to
+PostgreSQL (``sale.report`` _read_group) and hands plain dictionaries to
 :func:`build_report`. Keeping the math here makes it deterministic and unit
 testable in isolation.
 

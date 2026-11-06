@@ -161,35 +161,36 @@ class TopLeastSellingWizard(models.TransientModel):
         self.ensure_one()
         group_field = self._get_group_field()
         groupby = ([group_field] if group_field else []) + ['product_id']
-        data = self.env['sale.report'].read_group(
+        # read_group() is deprecated in 19.0: _read_group() returns one tuple per
+        # group, (group records..., aggregates...), with the record rules applied.
+        data = self.env['sale.report']._read_group(
             self._get_sale_report_domain(date_from, date_to),
-            ['product_uom_qty:sum', 'price_subtotal:sum', 'margin:sum'],
             groupby,
-            lazy=False,
+            ['product_uom_qty:sum', 'price_subtotal:sum', 'margin:sum'],
         )
-        product_ids = [d['product_id'][0] for d in data if d.get('product_id')]
-        products = self.env['product.product'].with_context(active_test=False).browse(product_ids)
-        by_id = {product.id: product for product in products}
         empty_label = {'team_id': _("No Sales Team"), 'user_id': _("No Salesperson")}.get(group_field)
         rows = []
         for item in data:
-            if not item.get('product_id'):
+            if group_field:
+                group, product, qty, sales, margin = item
+            else:
+                group = None
+                product, qty, sales, margin = item
+            if not product:
                 continue
-            product = by_id[item['product_id'][0]]
             group_id, group_name = False, False
             if group_field:
-                group = item.get(group_field)
-                group_id = group[0] if group else False
-                group_name = group[1] if group else empty_label
+                group_id = group.id if group else False
+                group_name = group.display_name if group else empty_label
             rows.append({
                 'group_id': group_id,
                 'group_name': group_name,
                 'product_id': product.id,
                 'product_name': product.display_name,
                 'uom_id': product.uom_id.id,
-                'qty': item.get('product_uom_qty') or 0.0,
-                'sales': item.get('price_subtotal') or 0.0,
-                'margin': item.get('margin') or 0.0,
+                'qty': qty or 0.0,
+                'sales': sales or 0.0,
+                'margin': margin or 0.0,
             })
         return rows
 

@@ -2,7 +2,7 @@
 Top & Least Selling Products Report
 ===================================
 
-Odoo 18 (Community & Enterprise). Author: Ibrahim Yahia.
+Odoo 19 (Community & Enterprise). Author: Ibrahim Yahia.
 
 Usage
 =====
