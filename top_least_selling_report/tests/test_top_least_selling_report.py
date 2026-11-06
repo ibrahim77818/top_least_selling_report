@@ -25,7 +25,7 @@ class TestTopLeastSellingReport(TransactionCase):
       SO2 team South / manager:   Alpha  5 x 14 (cost 6)  ->  70 / 30 / 40
                                   Charlie 2 Dozens x 24 (cost 12/dozen) -> 24 Units, 48 / 24 / 24
       Excluded: a draft order, a cancelled order and an April order.
-      A locked order (Odoo 17 lock flag) is still counted.
+      A locked order (lock flag, state stays 'sale') is still counted.
 
     Previous period (29 Jan - 28 Feb 2026)
       SO3 team North:             Alpha 20 x 15 (cost 6)  -> 300 / 120 / 180
@@ -48,7 +48,7 @@ class TestTopLeastSellingReport(TransactionCase):
         def make_product(name, cost):
             return cls.env['product.product'].create({
                 'name': name,
-                'detailed_type': 'consu',
+                'type': 'consu',
                 'categ_id': cls.categ.id,
                 'sale_ok': True,
                 'list_price': 1.0,
@@ -92,7 +92,7 @@ class TestTopLeastSellingReport(TransactionCase):
         cls.order_north = cls._create_order(
             [(cls.alpha, 10, 15.0, 6.0, None), (cls.bravo, 2, 100.0, 30.0, None)],
             march, cls.team_north, cls.salesman)
-        # Odoo 17 has no 'done' state any more: a locked order keeps state 'sale'.
+        # Since Odoo 17 there is no 'done' state: a locked order keeps state 'sale'.
         cls.order_north.action_lock()
         cls._create_order(
             [(cls.alpha, 5, 14.0, 6.0, None), (cls.charlie, 2, 24.0, 12.0, cls.uom_dozen)],
@@ -346,7 +346,7 @@ class TestTopLeastSellingReport(TransactionCase):
         action = wizard.action_show_browser()
         self.assertEqual(action['res_model'], 'top.least.selling.report.line')
         self.assertEqual(action['domain'], [('wizard_id', '=', wizard.id)])
-        self.assertEqual([view_type for _view_id, view_type in action['views']], ['tree', 'pivot', 'graph'])
+        self.assertEqual([view_type for _view_id, view_type in action['views']], ['list', 'pivot', 'graph'])
         self.assertEqual(action['views'][0][0],
                          self.env.ref('top_least_selling_report.view_top_least_selling_line_tree_compare').id)
         self.assertIn('search_default_group_team', action['context'])

@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 17.0\n"
+"Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-11-05 11:30+0000\n"
 "PO-Revision-Date: 2026-11-05 11:30+0000\n"
@@ -106,7 +106,6 @@ msgstr ""
 
 #. module: top_least_selling_report
 #: model:ir.model.fields,field_description:top_least_selling_report.field_top_least_selling_wizard__group_by
-#: model_terms:ir.ui.view,arch_db:top_least_selling_report.view_top_least_selling_line_search
 msgid "Group By"
 msgstr ""
 

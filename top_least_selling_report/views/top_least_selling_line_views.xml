@@ -5,7 +5,7 @@
         <field name="name">top.least.selling.report.line.tree</field>
         <field name="model">top.least.selling.report.line</field>
         <field name="arch" type="xml">
-            <tree string="Top &amp; Least Selling Products" create="false" edit="false" delete="false"
+            <list string="Top &amp; Least Selling Products" create="false" edit="false" delete="false"
                   decoration-success="section == 'top'" decoration-warning="section == 'least'">
                 <field name="currency_id" invisible="1"/>
                 <field name="group_sequence" invisible="1"/>
@@ -20,7 +20,7 @@
                 <field name="sales_amount" sum="Total"/>
                 <field name="profit_amount" sum="Total"/>
                 <field name="margin_percent"/>
-            </tree>
+            </list>
         </field>
     </record>
 
@@ -86,7 +86,7 @@
                 <filter name="filter_least" string="Least Selling" domain="[('section', '=', 'least')]"/>
                 <separator/>
                 <filter name="filter_new" string="New in Period" domain="[('is_new', '=', True)]"/>
-                <group expand="1" string="Group By">
+                <group>
                     <filter name="group_section" string="Ranking" context="{'group_by': 'section'}"/>
                     <filter name="group_team" string="Sales Team" context="{'group_by': 'team_id'}"/>
                     <filter name="group_user" string="Salesperson" context="{'group_by': 'user_id'}"/>

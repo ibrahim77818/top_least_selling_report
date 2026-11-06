@@ -303,7 +303,8 @@ class TopLeastSellingWizard(models.TransientModel):
         return '‪%s‬' % text
 
     def _get_report_direction(self):
-        lang = self.env['res.lang']._lang_get(self.env.lang or self.env.user.lang or 'en_US')
+        code = self.env.lang or self.env.user.lang or 'en_US'
+        lang = self.env['res.lang'].with_context(active_test=False).search([('code', '=', code)], limit=1)
         return (lang.direction if lang else 'ltr') or 'ltr'
 
     def _get_company_names(self):
@@ -439,7 +440,7 @@ class TopLeastSellingWizard(models.TransientModel):
         self.ensure_one()
         self._generate_lines()
         compare = self.compare_mode != 'none'
-        tree_view = self.env.ref(
+        list_view = self.env.ref(
             'top_least_selling_report.view_top_least_selling_line_tree_compare' if compare
             else 'top_least_selling_report.view_top_least_selling_line_tree')
         context = {'search_default_group_section': 2}
@@ -451,9 +452,9 @@ class TopLeastSellingWizard(models.TransientModel):
             'type': 'ir.actions.act_window',
             'name': _("Top & Least Selling Products"),
             'res_model': 'top.least.selling.report.line',
-            'view_mode': 'tree,pivot,graph',
+            'view_mode': 'list,pivot,graph',
             'views': [
-                (tree_view.id, 'tree'),
+                (list_view.id, 'list'),
                 (self.env.ref('top_least_selling_report.view_top_least_selling_line_pivot').id, 'pivot'),
                 (self.env.ref('top_least_selling_report.view_top_least_selling_line_graph').id, 'graph'),
             ],
